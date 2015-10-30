@@ -423,8 +423,7 @@ var app = {
                             var $content = $(ob).next('.item')[0].outerHTML;
                             baseData.categories[i]['items'][id] = [];
                             baseData.categories[i]['items'][id]['title'] = $(ob)[0].innerText;
-                            // baseData.categories[i]['items'][id]['content'] = app.syntaxHighlightingFixes($content);
-                            baseData.categories[i]['items'][id]['content'] = $content;
+                            baseData.categories[i]['items'][id]['content'] = app.syntaxHighlightingFixes($content);
 
                             // Seed data for checklist
                             app.checkList[index].push({
