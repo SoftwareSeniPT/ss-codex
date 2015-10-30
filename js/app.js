@@ -15,10 +15,10 @@
 var app = {
     markdowns: [{
         name: 'Frontend Dev',
-        file: 'doc.md'
+        file: 'frontend.md'
     }, {
         name: 'Graphic Design',
-        file: 'graphic.md'
+        file: 'graphic-design.md'
     }],
     savedData: [],
     template: {},
