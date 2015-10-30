@@ -424,7 +424,7 @@ The boilerplate theme template has a file called `part-facebook-tags.php` that g
 
 ___
  
-## Front-End Guidelines Yes
+## Front-End Guideliness
 Below are some general guidelines for formatting your code in a way that keeps it easily usable for our team. By far the most important thing when it comes to code etiquette is commenting. **Comment everything,** even if it seems obvious to you it needs to be commented. This is especially true for everything in both the main javascript file and the functions.php file.
 
 ### Whitespace

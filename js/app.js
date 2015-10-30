@@ -30,7 +30,7 @@ var app = {
         app.initContent();
         app.changeTopic();
         app.parseMarkDown();
-        app.dataLoadingAnimation();
+        // app.dataLoadingAnimation();
         app.readMoreDescription();
         app.searchHandler();
         app.showHideSubmenu();
