@@ -433,7 +433,7 @@ var app = {
                         });
                     }
 
-                    // If finished fire callback
+                    // If finished fire callbac
                     if (i == lastID) {
                         $(document).trigger('baseDataInitiated', [baseData, index]);
                     }
