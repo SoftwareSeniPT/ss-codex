@@ -34,10 +34,6 @@ body {
     background-color: #EAF4F3;
 }
 
-.outer {
-    max-width: 1200px;
-}
-
 .img {
     max-width: 100%;
     height: auto;
@@ -385,7 +381,6 @@ header a {
 }
 
 .styleguide #content .outer {
-    max-width: 1200px;
     padding-left: 250px;
 }
 
@@ -508,12 +503,13 @@ header a {
 
 .styleguide #content .desc .hero {
     background-image: url(../images/home-bg.png);
-    padding-bottom: 56%;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     color: #fff;
     display: none;
+    min-height: 400px;
+    background-position: bottom;
 }
 
 .styleguide #content .hero h1 {
@@ -521,16 +517,18 @@ header a {
     font-size: 80px;
     font-weight: 200;
     line-height: 1;
+    max-width: 650px;
 }
 
 .styleguide #content .hero p {
-    width: 70%;
+    max-width: 650px;
     font-size: 18px;
     margin: 30px 0;
 }
 
 .on-first-page #content .desc .hero {
     display: block;
+    padding: 50px;
 }
 
 .on-first-page .desc > div {
@@ -555,15 +553,7 @@ header a {
 .styleguide #content .desc .title {
     padding-left: 40px;
     padding-right: 40px;
-}
-
-.styleguide #content .desc .hero-content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 50px;
+    max-width: 900px;
 }
 
 .styleguide #content .desc .no-check {
