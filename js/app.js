@@ -14,6 +14,9 @@
 
 var app = {
     markdowns: [{
+        name: 'Getting Started',
+        file: 'getting-started.md'
+    }, {
         name: 'Frontend Dev',
         file: 'frontend.md'
     }, {
@@ -148,7 +151,6 @@ var app = {
     },
     updateMenuOnChecklistEvent: function() {
         $(document).on('checkListUpdated', function() {
-            console.log(app.checkList, 'check');
             // Reset side link checked state
             $('.side-menu li').removeClass('checked');
 
@@ -167,18 +169,26 @@ var app = {
                 var total = this.length,
                     percentage = ((checked / total) * 100);
                 // update checklist progress
-                $('.main-category[data-id="'+i+'"]').find('.progress span').css({
+                $('.main-category[data-id="' + i + '"]').find('.progress span').css({
                     width: percentage + "%"
                 });
             });
         });
     },
     initContent: function() {
+        var totalIndex = app.markdowns.length;
         $(document).on('baseDataInitiated', function(event, data, index) {
             app.initContentHandler(data, index);
             app.savedData[index] = data;
 
-            console.log(app.savedData)
+            if(index == (totalIndex - 1)) {
+                // Rearrange the menu
+                var $HTML = jQuery('.main-category[data-id=0]');
+                var outerHTML = $HTML[0].outerHTML;
+
+                $HTML.detach();
+                jQuery(outerHTML).prependTo('[data-template=side-menu]');
+            }
         });
     },
     initTemplate: function() {
@@ -272,7 +282,7 @@ var app = {
             categoryHTML.push(tmpl);
         });
 
-        var categoryResult = '<div class="main-category" data-id="'+index+'"><span class="progress"><span></span></span>' +
+        var categoryResult = '<div class="main-category" data-id="' + index + '"><span class="progress"><span></span></span>' +
             '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
             categoryHTML.join('\n\r') + '</ul></div>'
         $(categoryResult).appendTo('[data-template=side-menu]');
@@ -693,6 +703,16 @@ var app = {
     }
 }
 
+$.fn.appendToWithIndex = function(to, index) {
+    if (!to instanceof jQuery) {
+        to = $(to);
+    };
+    if (index === 0) {
+        $(this).prependTo(to)
+    } else {
+        $(this).insertAfter(to.children().eq(index - 1));
+    }
+};
 
 jQuery(document).ready(function($) {
     app.init($);
