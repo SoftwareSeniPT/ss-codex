@@ -1,59 +1,8 @@
-# Frontend Dev
+# Graphic Design
 
-This is the Funkhaus programming style guide and WordPress template theme.
+Thhat is the Funkhaus programming style guide and WordPress template theme.
 
 The purpose of this style guide is to provide guidance on building WordPress sites in the style Funkhaus has developed over the years. The aim is to make code readable, easy for fresh eyes to understand, and to standardize the many ways things can be done in WordPress.
-
-## Setting Up
-
-Below are some general guidelines to follow while you get started:
-
-### Theme Setup
-
-The theme directory name should be something short and indicative of the client's name, with the year the theme was built. For example, `bmw2015`, or `prettybird2015`. We do it this way so we can quickly tell how old a code base is, and easily build a new theme years later, and not worry about local caching of files.
-
-Generally, the structure of your theme directory will look like this:
-
-```
-clientname2015
-	/fonts
-	/images
-		logo.svg
-	/css
-		breakpoints.css
-		admin.css
-		login.css
-	/js
-		clientname2015.js
-	style.css
-	index.php
-	header.php
-	footer.php
-```
-
-#### File Naming
-
-Any components that will be used on multiple pages should be abstracted into a separate file prefixed with the word "part." Common examples might be:
-- `part-newsletter-signup.php`
-- `part-slideshow.php`
-
-All page template files should be prefixed with the word `template-`. Common examples:
-- `template-director-grid.php`
-- `template-video-detail.php`
-
-Icons and image assets should be named describing what they are, not what they represent:
-
-**Good:**
-
-* `icon-envelope.svg`
-* `icon-arrow-left.svg`
-
-**Bad:**
-
-* `icon-email.svg`
-* `icon-previous.svg`
-
-___
 
 ### Store Considerations
 
@@ -474,8 +423,8 @@ ___
 The boilerplate theme template has a file called `part-facebook-tags.php` that generates them for you mostly. It relies on the `social-preview` image size being generated in `functions.php`.
 
 ___
-
-## Front-End Guideline
+ 
+## Front-End Guidelines Yes
 Below are some general guidelines for formatting your code in a way that keeps it easily usable for our team. By far the most important thing when it comes to code etiquette is commenting. **Comment everything,** even if it seems obvious to you it needs to be commented. This is especially true for everything in both the main javascript file and the functions.php file.
 
 ### Whitespace
