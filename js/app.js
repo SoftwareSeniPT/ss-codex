@@ -19,6 +19,21 @@ var app = {
     }, {
         name: 'Graphic Design',
         file: 'graphic-design.md'
+    }, {
+        name: 'Quality Assurance',
+        file: 'quality-assurance.md'
+    }, {
+        name: 'Wordpress',
+        file: 'wordpress.md'
+    }, {
+        name: 'PHP',
+        file: 'php.md'
+    }, {
+        name: 'CodeIgniter',
+        file: 'codeigniter.md'
+    }, {
+        name: 'Ruby',
+        file: 'ruby.md'
     }],
     savedData: [],
     template: {},
@@ -152,7 +167,7 @@ var app = {
                 var total = this.length,
                     percentage = ((checked / total) * 100);
                 // update checklist progress
-                $('.main-category').eq(i).find('.progress span').css({
+                $('.main-category[data-id="'+i+'"]').find('.progress span').css({
                     width: percentage + "%"
                 });
             });
@@ -161,7 +176,9 @@ var app = {
     initContent: function() {
         $(document).on('baseDataInitiated', function(event, data, index) {
             app.initContentHandler(data, index);
-            app.savedData.push(data);
+            app.savedData[index] = data;
+
+            console.log(app.savedData)
         });
     },
     initTemplate: function() {
@@ -255,7 +272,7 @@ var app = {
             categoryHTML.push(tmpl);
         });
 
-        var categoryResult = '<div class="main-category"><span class="progress"><span></span></span>' +
+        var categoryResult = '<div class="main-category" data-id="'+index+'"><span class="progress"><span></span></span>' +
             '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
             categoryHTML.join('\n\r') + '</ul></div>'
         $(categoryResult).appendTo('[data-template=side-menu]');
@@ -364,7 +381,7 @@ var app = {
             // Seed checklist parent
             app.checkList[index] = [];
 
-            $.get(o.file).done(function(data) {
+            $.get('./markdowns/' + o.file).done(function(data) {
                 // Convert the markdown to HTML
                 var $html = $('<div class="html"></div>').append(marked(data));
 
