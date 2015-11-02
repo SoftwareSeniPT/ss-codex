@@ -3,7 +3,7 @@ This is introduction for this guide.
 
 ## Getting started
 
-By default, the template contains extra boilerplate structure to account for Woocommerce pages and functionality. Every time a new site is started, make sure you determine whether or not the store/Woocommerce components will be needed. If you won't be needing them (most sites), follow these steps:
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex hic, repellendus! Modi accusantium, quisquam reprehenderit, animi ad, libero est natus distinctio obcaecati praesentium quo saepe porro eius a rem consectetur.
 
 ## Last Updates
 
