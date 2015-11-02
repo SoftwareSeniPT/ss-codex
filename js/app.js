@@ -45,10 +45,8 @@ var app = {
         app.animateTitle();
         app.animateCheckIconOnHover();
         app.initTemplate();
-        app.initContent();
         app.changeTopic();
         app.parseMarkDown();
-        // app.dataLoadingAnimation();
         app.readMoreDescription();
         app.searchHandler();
         app.showHideSubmenu();
@@ -175,22 +173,6 @@ var app = {
             });
         });
     },
-    initContent: function() {
-        var totalIndex = app.markdowns.length;
-        $(document).on('baseDataInitiated', function(event, data, index) {
-            app.initContentHandler(data, index);
-            app.savedData[index] = data;
-
-            if(index == (totalIndex - 1)) {
-                // Rearrange the menu
-                var $HTML = jQuery('.main-category[data-id=0]');
-                var outerHTML = $HTML[0].outerHTML;
-
-                $HTML.detach();
-                jQuery(outerHTML).prependTo('[data-template=side-menu]');
-            }
-        });
-    },
     initTemplate: function() {
         var template = {
             content: $('[data-template=content]'),
@@ -220,78 +202,74 @@ var app = {
         app.template['searchResultTemplate'] = template.searchResult.html();
         template.searchResult.html('');
     },
-    initContentHandler: function(data, index) {
-        // Init the title
-        var mainTitle = data.title;
+    initContentHandler: function(data) {
+        jQuery.each(data, function(index) {
+            // Init the title
+            var mainTitle = this.title;
 
-        var title = data.categories[0]['name'],
-            description = data.categories[0]['description'],
-            items = data.categories[0]['items'];
+            var title = this.categories[0]['name'],
+                description = this.categories[0]['description'],
+                items = this.categories[0]['items'];
 
-        jQuery('body').addClass('on-first-page');
+            jQuery('body').addClass('on-first-page');
 
-        if (description !== undefined) {
-            // Check if there is any description
-            var tmpl = app.template['mainContentTemplate'],
-                content = description;
+            if (description !== undefined) {
+                // Check if there is any description
+                var tmpl = app.template['mainContentTemplate'],
+                    content = description;
 
-            tmpl = tmpl.replace('{{ title }}', title);
-            tmpl = tmpl.replace('{{ content }}', content);
-            tmpl = tmpl.replace('{{ id }}', 'desc-0');
-            tmpl = tmpl.replace('{{ class }}', 'no-check');
-            tmpl = '<div class="content-desc-0-' + index + '" data-id="desc-0-' + index + '">' + tmpl + '</div>';
+                tmpl = tmpl.replace('{{ title }}', title);
+                tmpl = tmpl.replace('{{ content }}', content);
+                tmpl = tmpl.replace('{{ id }}', 'desc-0');
+                tmpl = tmpl.replace('{{ class }}', 'no-check');
+                tmpl = '<div class="content-desc-0-' + index + '" data-id="desc-0-' + index + '">' + tmpl + '</div>';
 
-            $(tmpl).appendTo('[data-template=content]');
+                $(tmpl).appendTo('[data-template=content]');
 
-        } else if (items.length > 0) {
-            // If there is no description, show the first item
-            var tmpl = app.template['mainContentTemplate'],
-                title = $(items[0]['title']).text(),
-                content = items[0]['content'];
+            } else if (items.length > 0) {
+                // If there is no description, show the first item
+                var tmpl = app.template['mainContentTemplate'],
+                    title = $(items[0]['title']).text(),
+                    content = items[0]['content'];
 
-            tmpl = tmpl.replace('{{ title }}', title);
-            tmpl = tmpl.replace('{{ content }}', content);
-            tmpl = tmpl.replace('{{ id }}', '0-0');
-            tmpl = tmpl.replace('{{ class }}', '');
-            tmpl = '<div class="content-0-0' + index + '" data-id="0-0' + index + '">' + tmpl + '</div>';
+                tmpl = tmpl.replace('{{ title }}', title);
+                tmpl = tmpl.replace('{{ content }}', content);
+                tmpl = tmpl.replace('{{ id }}', '0-0');
+                tmpl = tmpl.replace('{{ class }}', '');
+                tmpl = '<div class="content-0-0' + index + '" data-id="0-0' + index + '">' + tmpl + '</div>';
 
-            $(tmpl).appendTo('[data-template=content]');
-        }
+                $(tmpl).appendTo('[data-template=content]');
+            }
 
-        // Init side menu
-        var categoryHTML = [];
+            // Init side menu
+            var categoryHTML = [];
 
-        $.each(data.categories, function(i, o) {
-            var tmpl = app.template['sideMenuTitleTemplate'],
-                category = o.name,
-                titles = [];
+            $.each(this.categories, function(i, o) {
+                var tmpl = app.template['sideMenuTitleTemplate'],
+                    category = o.name,
+                    titles = [];
 
-            $.each(o.items, function(id, ob) {
+                $.each(o.items, function(id, ob) {
 
-                var titleTmpl = app.template['sideMenuChildrenTemplate'];
+                    var titleTmpl = app.template['sideMenuChildrenTemplate'];
 
-                titleTmpl = titleTmpl.replace('{{ title }}', ob.title);
-                titleTmpl = titleTmpl.replace(/{{ id }}/g, id + '-' + i + '-' + index);
-                titles.push(titleTmpl);
+                    titleTmpl = titleTmpl.replace('{{ title }}', ob.title);
+                    titleTmpl = titleTmpl.replace(/{{ id }}/g, id + '-' + i + '-' + index);
+                    titles.push(titleTmpl);
+                });
+
+                tmpl = tmpl.replace('{{ id }}', 'desc-' + i + '-' + index);
+                tmpl = tmpl.replace('{{ title }}', category);
+                tmpl = tmpl.replace('{{ children }}', titles.join('\n\r'));
+
+                categoryHTML.push(tmpl);
             });
 
-            tmpl = tmpl.replace('{{ id }}', 'desc-' + i + '-' + index);
-            tmpl = tmpl.replace('{{ title }}', category);
-            tmpl = tmpl.replace('{{ children }}', titles.join('\n\r'));
-
-            categoryHTML.push(tmpl);
+            var categoryResult = '<div class="main-category" data-id="' + index + '"><span class="progress"><span></span></span>' +
+                '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
+                categoryHTML.join('\n\r') + '</ul></div>'
+            $(categoryResult).appendTo('[data-template=side-menu]');
         });
-
-        var categoryResult = '<div class="main-category" data-id="' + index + '"><span class="progress"><span></span></span>' +
-            '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
-            categoryHTML.join('\n\r') + '</ul></div>'
-        $(categoryResult).appendTo('[data-template=side-menu]');
-
-        // Convert SVG files
-        app.initSVG();
-
-        // fire an event if content is done initiated
-        $(document).trigger('contentInitiated');
     },
     showHideSubmenu: function() {
         jQuery(document).on('click', '.main-category > h3', function() {
@@ -366,11 +344,6 @@ var app = {
                         classes = '';
                 }
 
-                console.log(app.savedData, 'data');
-                console.log(grandParentID, 'grandparent');
-                console.log(parentID, 'parent');
-                console.log(itemID, 'item');
-
                 tmpl = tmpl.replace('{{ title }}', title);
                 tmpl = tmpl.replace('{{ content }}', content);
                 tmpl = tmpl.replace('{{ id }}', id);
@@ -384,9 +357,23 @@ var app = {
         });
     },
     parseMarkDown: function() {
+        // set ajax to sync
+        jQuery.ajaxSetup({async:false});
+
+        // get the total markdown;
+        var markdownLength = app.markdowns.length;
+
+        // Looping the markdowns array
         jQuery.each(app.markdowns, function(index, o) {
-            var baseData = {};
-            baseData.categories = [];
+            var mainCategory = [];
+            var mainTitle = '';
+            var mainDescription = '';
+
+            app.savedData[index] = {
+                categories: null,
+                description: null,
+                title: null
+            };
 
             // Seed checklist parent
             app.checkList[index] = [];
@@ -399,9 +386,9 @@ var app = {
                 var $title = $html.find('> h1').eq(0);
 
                 if ($title.length) {
-                    baseData.title = $title[0].innerText;
+                    mainTitle = $title[0].innerText;
                 } else {
-                    baseData.title = "Untitled Documentation"
+                    mainTitle = "Untitled Documentation"
                 }
 
                 // Get the main description
@@ -410,9 +397,9 @@ var app = {
                 var $mainDescription = $html.find('.main-description');
 
                 if ($mainDescription.length) {
-                    baseData['description'] = $mainDescription[0].innerText;
+                    mainDescription = $mainDescription[0].innerText;
                 } else {
-                    baseData['description'] = "Just another awesome documentation";
+                    mainDescription = "Just another awesome documentation";
                 }
 
                 // Loop the html to explode the h2 into categories
@@ -421,26 +408,25 @@ var app = {
 
                 $categories.each(function(i, o) {
 
-
                     $(o).nextUntil('.html > h2').wrapAll('<div class="category"></div>');
 
                     // Prepend a div so we can select the description
                     $(o).next('.category').prepend('<div class="desc-node"></div>');
                     $(o).next('.category').find('.desc-node').nextUntil('.category > h3').wrapAll('<div class="description"></div>');
 
-                    // Store the category name
-                    baseData.categories[i] = [];
-                    baseData.categories[i]['items'] = [];
-                    baseData.categories[i]['name'] = $(o)[0].innerText;
-
                     var $description = $(o).next('.category').find('.description');
+
+                    var desc;
                     if ($description.length) {
-                        baseData.categories[i]['description'] = $description[0].innerHTML;
+                        desc = $description[0].innerHTML;
+                    } else {
+                        desc = "";
                     }
 
                     // Check if is there any h3 heading
                     $titles = $(o).next('.category').find('> h3');
 
+                    var itemArr = [];
                     if ($titles.length > 0) {
                         // Find h3s of each category
                         $titles.each(function(id, ob) {
@@ -448,9 +434,14 @@ var app = {
 
                             // Store the item title and content
                             var $content = $(ob).next('.item')[0].outerHTML;
-                            baseData.categories[i]['items'][id] = [];
-                            baseData.categories[i]['items'][id]['title'] = $(ob)[0].innerText;
-                            baseData.categories[i]['items'][id]['content'] = app.syntaxHighlightingFixes($content);
+
+                            // Push data
+                            var itemObj = {
+                                title: $(ob)[0].innerText,
+                                content: app.syntaxHighlightingFixes($content)
+                            };
+
+                            itemArr.push(itemObj);
 
                             // Seed data for checklist
                             app.checkList[index].push({
@@ -460,12 +451,23 @@ var app = {
                         });
                     }
 
-                    // If finished fire callbac
-                    if (i == lastID) {
-                        $(document).trigger('baseDataInitiated', [baseData, index]);
-                    }
+                    var categoryObj = {
+                        items: itemArr,
+                        name: $(o)[0].innerText,
+                        description: desc
+                    };
+
+                    mainCategory.push(categoryObj);
                 });
-            })
+                
+                app.savedData[index].categories = mainCategory;
+                app.savedData[index].description = mainDescription;
+                app.savedData[index].title = mainTitle;
+
+                if (index == (markdownLength - 1)) {
+                    app.initContentHandler(app.savedData);
+                }
+            });
         });
     },
     syntaxHighlightingFixes: function(html) {
@@ -533,28 +535,6 @@ var app = {
             var description = app.trimWord(app.baseData.description, 200);
             description = description + " <span data-read-more>Show more description</span>"
             $('[data-description]').html(description);
-        });
-    },
-    dataLoadingAnimation: function() {
-        var loader = new SVGLoader(document.getElementById('loader'), {
-            speedIn: 600,
-            easingIn: mina.easeinout
-        });
-
-        loader.show();
-
-        $(document).on('contentInitiated', function() {
-            setTimeout(function() {
-                $('#loader').removeClass('opening');
-                loader.hide();
-
-                // Trigger event telling animation is done
-                $('#loader').removeClass('pageload-loading');
-                setTimeout(function() {
-                    $(document).trigger("pageAnimationDone");
-                }, 600);
-
-            }, 1000);
         });
     },
     searchHandler: function() {
