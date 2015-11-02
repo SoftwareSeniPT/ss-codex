@@ -685,8 +685,8 @@ var app = {
         });
 
         // close the hamburger when choosing menu
-        jQuery('.main-category > ul > li').click(function() {
-            if (!jQuery(this).find('ul li').length) {
+        jQuery('.main-category > ul > li span').click(function() {
+            if (!jQuery(this).parent().find('ul li').length) {
                 closeOffcanvas();
             }
         });
