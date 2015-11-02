@@ -225,9 +225,6 @@ var app = {
         });
     },
     initContentHandler: function(data) {
-
-        console.log(data, 'data');
-
         jQuery.each(data, function(index) {
             // Init the title
             var mainTitle = this.title;
@@ -294,6 +291,9 @@ var app = {
                 '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
                 categoryHTML.join('\n\r') + '</ul></div>'
             $(categoryResult).appendTo('[data-template=side-menu]');
+
+            app.initSVG();
+
         });
 
         jQuery(document).trigger('contentInitiated');
