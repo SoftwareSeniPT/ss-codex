@@ -224,6 +224,9 @@ var app = {
         });
     },
     initContentHandler: function(data) {
+
+        console.log(data, 'data');
+
         jQuery.each(data, function(index) {
             // Init the title
             var mainTitle = this.title;
@@ -382,7 +385,8 @@ var app = {
     parseMarkDown: function() {
         // set ajax to sync
         jQuery.ajaxSetup({
-            async: false
+            async: false,
+            cache: true
         });
 
         // get the total markdown;
@@ -411,7 +415,7 @@ var app = {
                 var $title = $html.find('> h1').eq(0);
 
                 if ($title.length) {
-                    mainTitle = $title[0].innerText;
+                    mainTitle = $title[0].innerText || $title[0].textContent;
                 } else {
                     mainTitle = "Untitled Documentation"
                 }
@@ -422,7 +426,7 @@ var app = {
                 var $mainDescription = $html.find('.main-description');
 
                 if ($mainDescription.length) {
-                    mainDescription = $mainDescription[0].innerText;
+                    mainDescription = $mainDescription[0].innerText || $mainDescription[0].textContent;
                 } else {
                     mainDescription = "Just another awesome documentation";
                 }
@@ -462,7 +466,7 @@ var app = {
 
                             // Push data
                             var itemObj = {
-                                title: $(ob)[0].innerText,
+                                title: $(ob)[0].innerText || $(ob)[0].textContent,
                                 content: app.syntaxHighlightingFixes($content)
                             };
 
@@ -478,7 +482,7 @@ var app = {
 
                     var categoryObj = {
                         items: itemArr,
-                        name: $(o)[0].innerText,
+                        name: $(o)[0].innerText || $(o)[0].textContent,
                         description: desc
                     };
 
