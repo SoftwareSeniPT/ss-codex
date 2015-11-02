@@ -666,29 +666,33 @@ var app = {
         jQuery(".nano").nanoScroller();
     },
     mobileHamburgerInit: function() {
+        function closeOffcanvas() {
+            jQuery('body')
+                .removeClass('hamburger-open')
+                .addClass('hamburger-close');
+
+            jQuery('.move-left').eq(0).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+                jQuery('body').removeClass('hamburger-close')
+            });
+        }
+
         jQuery(document).on('touchstart', '#hamburger', function() {
             if (!jQuery('body').hasClass('hamburger-open')) {
                 jQuery('body').addClass('hamburger-open')
             } else {
-                jQuery('body')
-                    .removeClass('hamburger-open')
-                    .addClass('hamburger-close');
-
-                jQuery('.move-left').eq(0).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-                    jQuery('body').removeClass('hamburger-close')
-                });
+                closeOffcanvas()
             }
         });
 
         // close the hamburger when choosing menu
         jQuery('.main-category > ul > li').click(function() {
             if (!jQuery(this).find('ul li').length) {
-                jQuery('body').removeClass('hamburger-open')
+                closeOffcanvas();
             }
         });
 
         jQuery('.main-category > ul > li > ul > li').click(function() {
-            jQuery('body').removeClass('hamburger-open')
+            closeOffcanvas();
         });
     },
     initSVG: function() {
