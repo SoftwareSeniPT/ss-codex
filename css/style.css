@@ -382,13 +382,19 @@ header a {
     background-color: #E8F6F6;
 }
 
-.styleguide #content .topic li .svg {
+.styleguide #content .topic li li a {
+    position: absolute;
+    right: -29px;
+    top: 50%;
+    margin-top: -10px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.styleguide #content .topic li li .svg {
     width: 11px;
     height: 11px;
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    margin-top: -5px;
+    vertical-align: top;
 }
 
 .styleguide #content .outer {
