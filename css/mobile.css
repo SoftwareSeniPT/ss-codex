@@ -33,8 +33,9 @@
         width: 12px;
     }
     #search-form .search-input {
-        padding: 25px 65px 24px 70px;
+        padding: 25px 65px 24px 0px;
         font-size: 17px;
+        left: 70px;
     }
     .styleguide #content .desc .hero {
         min-height: 300px;
