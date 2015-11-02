@@ -42,6 +42,7 @@ var app = {
     template: {},
     checkList: [],
     init: function($) {
+        app.dataLoadingAnimation();
         app.animateTitle();
         app.animateCheckIconOnHover();
         app.initTemplate();
@@ -202,6 +203,26 @@ var app = {
         app.template['searchResultTemplate'] = template.searchResult.html();
         template.searchResult.html('');
     },
+    dataLoadingAnimation: function() {
+        var loader = new SVGLoader(document.getElementById('loader'), {
+            speedIn: 600,
+            easingIn: mina.easeinout
+        });
+
+        loader.show();
+
+        $(document).on('contentInitiated', function() {
+            console.log('init');
+
+            $('#loader').removeClass('opening');
+            loader.hide();
+            
+            setTimeout(function() {
+                $(document).trigger("pageAnimationDone");
+                // $('#loader').removeClass('pageload-loading');
+            }, 600);
+        });
+    },
     initContentHandler: function(data) {
         jQuery.each(data, function(index) {
             // Init the title
@@ -270,6 +291,8 @@ var app = {
                 categoryHTML.join('\n\r') + '</ul></div>'
             $(categoryResult).appendTo('[data-template=side-menu]');
         });
+
+        jQuery(document).trigger('contentInitiated');
     },
     showHideSubmenu: function() {
         jQuery(document).on('click', '.main-category > h3', function() {
@@ -358,7 +381,9 @@ var app = {
     },
     parseMarkDown: function() {
         // set ajax to sync
-        jQuery.ajaxSetup({async:false});
+        jQuery.ajaxSetup({
+            async: false
+        });
 
         // get the total markdown;
         var markdownLength = app.markdowns.length;
@@ -459,7 +484,7 @@ var app = {
 
                     mainCategory.push(categoryObj);
                 });
-                
+
                 app.savedData[index].categories = mainCategory;
                 app.savedData[index].description = mainDescription;
                 app.savedData[index].title = mainTitle;
@@ -682,17 +707,6 @@ var app = {
 
     }
 }
-
-$.fn.appendToWithIndex = function(to, index) {
-    if (!to instanceof jQuery) {
-        to = $(to);
-    };
-    if (index === 0) {
-        $(this).prependTo(to)
-    } else {
-        $(this).insertAfter(to.children().eq(index - 1));
-    }
-};
 
 jQuery(document).ready(function($) {
     app.init($);

@@ -678,8 +678,6 @@ footer a {
     animation: moveLeft 0.6s linear infinite alternate;
 }
 
-.pageload-loading.pageload-overlay::after,
-.pageload-loading.pageload-overlay::before,
 .opening.pageload-overlay::after,
 .opening.pageload-overlay::before {
     opacity: 1;
