@@ -53,6 +53,7 @@ var app = {
         app.showHideSubmenu();
         app.updateMenuOnChecklistEvent();
         app.menuScrollBarInit();
+        app.mobileHamburgerInit();
     },
     onResize: function() {
 
@@ -663,6 +664,15 @@ var app = {
     },
     menuScrollBarInit: function() {
         jQuery(".nano").nanoScroller();
+    },
+    mobileHamburgerInit: function() {
+        jQuery(document).on('touchstart', '#hamburger', function(){
+            if(!jQuery('body').hasClass('hamburger-open')) {
+                jQuery('body').addClass('hamburger-open')
+            } else {
+                jQuery('body').removeClass('hamburger-open')
+            }
+        });
     },
     initSVG: function() {
         // Set total and counter 
