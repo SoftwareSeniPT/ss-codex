@@ -8,7 +8,9 @@
 @media (max-width: 450px) {
     .styleguide #content .topic,
     .logo {
-        transform: translateX(-250px);
+        -webkit-transform: translateX(-250px);
+            -ms-transform: translateX(-250px);
+                transform: translateX(-250px);
     }
     .styleguide #content .outer {
         padding-left: 0;
@@ -57,14 +59,18 @@
     }
 
     /* Offcanvas */
-    .hamburger-open {
+    .hamburger-open, .hamburger-open #content {
     	overflow: hidden;
     }
     .hamburger-open #content .move-left {
-    	transform: translateX(0);
+    	-webkit-transform: translateX(0);
+    	    -ms-transform: translateX(0);
+    	        transform: translateX(0);
     }
 
     .hamburger-open #content .move-right {
-    	transform: translateX(250px);
+    	-webkit-transform: translateX(250px);
+    	    -ms-transform: translateX(250px);
+    	        transform: translateX(250px);
     }
 }

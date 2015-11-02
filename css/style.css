@@ -1,4 +1,17 @@
-/*
+.example {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all .5s;
+            transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: -webkit-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
+}/*
 App Name: Sweet Docs
 App URL: http://diru.io/sweet-docs
 Author: Rudi Wahyudi
@@ -13,8 +26,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: none;
@@ -22,8 +33,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 *:before,
 *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -303,7 +312,6 @@ header a {
     top: 0;
     bottom: 0;
     left: 0;
-    -webkit-box-shadow: 1px 0 2px -2px #555;
     box-shadow: 1px 0 2px -2px #555;
     border-right: 1px solid #BDBDBD;
 }
@@ -668,7 +676,8 @@ footer a {
 .pageload-overlay::after {
     background: #6cc88a;
     -webkit-transform: translateX(-20px);
-    transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+        transform: translateX(-20px);
     -webkit-animation: moveRight 0.6s linear infinite alternate;
     animation: moveRight 0.6s linear infinite alternate;
 }
@@ -676,7 +685,8 @@ footer a {
 .pageload-overlay::before {
     background: #4fc3f7;
     -webkit-transform: translateX(20px);
-    transform: translateX(20px);
+    -ms-transform: translateX(20px);
+        transform: translateX(20px);
     -webkit-animation: moveLeft 0.6s linear infinite alternate;
     animation: moveLeft 0.6s linear infinite alternate;
 }
@@ -697,7 +707,8 @@ footer a {
 
 @keyframes moveRight {
     to {
-        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+                transform: translateX(20px);
     }
 }
 
@@ -709,7 +720,8 @@ footer a {
 
 @keyframes moveLeft {
     to {
-        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+                transform: translateX(-20px);
     }
 }
 
@@ -718,11 +730,13 @@ footer a {
 
 #jumbotron .title,
 #jumbotron .description {
-    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+            transition: all 0.8s ease;
 }
 
 .move-left, .move-right {
-    transition: transform 0.4s ease;
+    -webkit-transition: -webkit-transform 0.4s ease;
+            transition: transform 0.4s ease;
 }
 
 .progress span {
@@ -757,6 +771,33 @@ footer a {
     animation: show 0.5s ease;
 }
 
+@-webkit-keyframes show {
+    0% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        display: block;
+        opacity: 0;
+    }
+    20% {
+        -webkit-transform: scale(0.95, 0.95);
+        transform: scale(0.95, 0.95);
+    }
+    50% {
+        -webkit-transform: scale(1.05, 1.05);
+        transform: scale(1.05, 1.05);
+        opacity: 1;
+    }
+    60% {
+        -webkit-transform: scale(0.95, 0.95);
+        transform: scale(0.95, 0.95);
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        display: block;
+    }
+}
+
 @keyframes show {
     0% {
         -webkit-transform: scale(1, 1);
@@ -781,6 +822,17 @@ footer a {
         -webkit-transform: scale(1, 1);
         transform: scale(1, 1);
         display: block;
+    }
+}
+
+@-webkit-keyframes hide {
+    1% {
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
     }
 }
 
@@ -1076,11 +1128,7 @@ pre .regexp {
     /* Target only IE7 and IE8 with this hack */
     opacity: .01;
     -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -o-transition: .2s;
     transition: .2s;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
 }
 
@@ -1089,8 +1137,6 @@ pre .regexp {
     background: rgba(0, 0, 0, .3);
     position: relative;
     margin: 0 1px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
     border-radius: 3px;
 }
 

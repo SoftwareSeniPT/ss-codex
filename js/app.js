@@ -673,6 +673,17 @@ var app = {
                 jQuery('body').removeClass('hamburger-open')
             }
         });
+
+        // close the hamburger when choosing menu
+        jQuery('.main-category > ul > li').click(function(){
+            if(!jQuery(this).find('ul li').length) {
+                jQuery('body').removeClass('hamburger-open')
+            }
+        });        
+
+        jQuery('.main-category > ul > li > ul > li').click(function(){
+                jQuery('body').removeClass('hamburger-open')
+        });
     },
     initSVG: function() {
         // Set total and counter 
