@@ -217,7 +217,7 @@ var app = {
 
             $('#loader').removeClass('opening');
             loader.hide();
-            
+
             setTimeout(function() {
                 $(document).trigger("pageAnimationDone");
                 // $('#loader').removeClass('pageload-loading');
@@ -666,23 +666,29 @@ var app = {
         jQuery(".nano").nanoScroller();
     },
     mobileHamburgerInit: function() {
-        jQuery(document).on('touchstart', '#hamburger', function(){
-            if(!jQuery('body').hasClass('hamburger-open')) {
+        jQuery(document).on('touchstart', '#hamburger', function() {
+            if (!jQuery('body').hasClass('hamburger-open')) {
                 jQuery('body').addClass('hamburger-open')
             } else {
-                jQuery('body').removeClass('hamburger-open')
+                jQuery('body')
+                    .removeClass('hamburger-open')
+                    .addClass('hamburger-close');
+
+                jQuery('.move-left').eq(0).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+                    jQuery('body').removeClass('hamburger-close')
+                });
             }
         });
 
         // close the hamburger when choosing menu
-        jQuery('.main-category > ul > li').click(function(){
-            if(!jQuery(this).find('ul li').length) {
+        jQuery('.main-category > ul > li').click(function() {
+            if (!jQuery(this).find('ul li').length) {
                 jQuery('body').removeClass('hamburger-open')
             }
-        });        
+        });
 
-        jQuery('.main-category > ul > li > ul > li').click(function(){
-                jQuery('body').removeClass('hamburger-open')
+        jQuery('.main-category > ul > li > ul > li').click(function() {
+            jQuery('body').removeClass('hamburger-open')
         });
     },
     initSVG: function() {
