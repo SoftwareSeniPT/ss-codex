@@ -39,7 +39,7 @@ var app = {
         file: 'ruby.md'
     }, {
         name: 'Contribute',
-        link: 'http://github.com'
+        link: 'https://github.com/SoftwareSeniPT/ss-codex'
     }],
     savedData: [],
     template: {},
