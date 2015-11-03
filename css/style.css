@@ -1,17 +1,4 @@
-.example {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-transition: all .5s;
-            transition: all .5s;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    background: -webkit-linear-gradient(top, white, black);
-    background: linear-gradient(to bottom, white, black);
-}/*
+/*
 App Name: Sweet Docs
 App URL: http://diru.io/sweet-docs
 Author: Rudi Wahyudi
@@ -36,11 +23,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
     font-size: 16px;
     background-color: #EAF4F3;
+    height: 100%;
+    overflow: auto;
 }
 
 .img {
