@@ -38,7 +38,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, cumque.
 Managing sizes using pixels in responsive design is an absolute hog. The lack of relativity between separate elements’ sizes means you have to treat each setting as a separate concern, for each separate breakpoint. In fact, using pixels you even have to manage the font size and margin of single, isolated elements separately. You really don’t want to do that.
 
 Take the following example:
-```
+```css
 @media (min-width: 400px) { 
   h1 { 
     font-size: 22px; 
@@ -49,7 +49,7 @@ Take the following example:
 
 How would we write that using relative units? We wouldn’t. In fact, we wouldn’t have to address font sizes or margins for any individual elements in any of our @media queries. We’d simply let the browser or user determine the font-size on the root element (<html>) and set all my other dimensions in ems or rems.
 
-```
+```css
 h1, h2 { margin-top: 1.5rem; } 
 h1 { font-size: 2.5em; } 
 h2 { font-size: 2em; } 
@@ -58,7 +58,7 @@ h2 { font-size: 2em; }
 
 Then, when we wanted to scale things up at a min-width breakpoint, we’d just adjust the root font size, upon which everything else is proportionately based. I use a percentage value because this is relative to the user’s preference, if set:
 
-```
+```css
 @media (min-width: 400px) { /* "Should be ems too!" - lots of folks :-) */
   html { 
     font-size: 120%; 
@@ -67,9 +67,12 @@ Then, when we wanted to scale things up at a min-width breakpoint, we’d just a
 ```
 
 That’s it. That’s 90% of your responsive design strategy right there. For bonus points, you can set a common margin between all your sibling flow elements using a selector.
+
+```css
 body * + * { 
   margin-top: 1.5rem; 
 }
+```
 
 
 
