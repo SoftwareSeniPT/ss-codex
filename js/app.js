@@ -37,6 +37,9 @@ var app = {
     }, {
         name: 'Ruby',
         file: 'ruby.md'
+    }, {
+        name: 'Contribute',
+        link: 'http://github.com'
     }],
     savedData: [],
     template: {},
@@ -226,74 +229,79 @@ var app = {
     },
     initContentHandler: function(data) {
         jQuery.each(data, function(index) {
-            // Init the title
-            var mainTitle = this.title;
+            if (this.link !== undefined) {
+                var categoryResult = '<div class="main-category">' +
+                    '<h3 class="category-title"><a href="'+this.link+'" target="_blank">' + this.title + '</a></h3></div>'
+                $(categoryResult).appendTo('[data-template=side-menu]');
+            } else {
+                // Init the title
+                var mainTitle = this.title;
 
-            var title = this.categories[0]['name'],
-                description = this.categories[0]['description'],
-                items = this.categories[0]['items'];
+                var title = this.categories[0]['name'],
+                    description = this.categories[0]['description'],
+                    items = this.categories[0]['items'];
 
-            jQuery('body').addClass('on-first-page');
+                jQuery('body').addClass('on-first-page');
 
-            if (description !== undefined) {
-                // Check if there is any description
-                var tmpl = app.template['mainContentTemplate'],
-                    content = description;
+                if (description !== undefined) {
+                    // Check if there is any description
+                    var tmpl = app.template['mainContentTemplate'],
+                        content = description;
 
-                tmpl = tmpl.replace('{{ title }}', title);
-                tmpl = tmpl.replace('{{ content }}', content);
-                tmpl = tmpl.replace('{{ id }}', 'desc-0');
-                tmpl = tmpl.replace('{{ class }}', 'no-check');
-                tmpl = '<div class="content-desc-0-' + index + '" data-id="desc-0-' + index + '">' + tmpl + '</div>';
+                    tmpl = tmpl.replace('{{ title }}', title);
+                    tmpl = tmpl.replace('{{ content }}', content);
+                    tmpl = tmpl.replace('{{ id }}', 'desc-0');
+                    tmpl = tmpl.replace('{{ class }}', 'no-check');
+                    tmpl = '<div class="content-desc-0-' + index + '" data-id="desc-0-' + index + '">' + tmpl + '</div>';
 
-                $(tmpl).appendTo('[data-template=content]');
+                    $(tmpl).appendTo('[data-template=content]');
 
-            } else if (items.length > 0) {
-                // If there is no description, show the first item
-                var tmpl = app.template['mainContentTemplate'],
-                    title = $(items[0]['title']).text(),
-                    content = items[0]['content'];
+                } else if (items.length > 0) {
+                    // If there is no description, show the first item
+                    var tmpl = app.template['mainContentTemplate'],
+                        title = $(items[0]['title']).text(),
+                        content = items[0]['content'];
 
-                tmpl = tmpl.replace('{{ title }}', title);
-                tmpl = tmpl.replace('{{ content }}', content);
-                tmpl = tmpl.replace('{{ id }}', '0-0');
-                tmpl = tmpl.replace('{{ class }}', '');
-                tmpl = '<div class="content-0-0' + index + '" data-id="0-0' + index + '">' + tmpl + '</div>';
+                    tmpl = tmpl.replace('{{ title }}', title);
+                    tmpl = tmpl.replace('{{ content }}', content);
+                    tmpl = tmpl.replace('{{ id }}', '0-0');
+                    tmpl = tmpl.replace('{{ class }}', '');
+                    tmpl = '<div class="content-0-0' + index + '" data-id="0-0' + index + '">' + tmpl + '</div>';
 
-                $(tmpl).appendTo('[data-template=content]');
-            }
+                    $(tmpl).appendTo('[data-template=content]');
+                }
 
-            // Init side menu
-            var categoryHTML = [];
+                // Init side menu
+                var categoryHTML = [];
 
-            $.each(this.categories, function(i, o) {
-                var tmpl = app.template['sideMenuTitleTemplate'],
-                    category = o.name,
-                    titles = [];
+                $.each(this.categories, function(i, o) {
+                    var tmpl = app.template['sideMenuTitleTemplate'],
+                        category = o.name,
+                        titles = [];
 
-                $.each(o.items, function(id, ob) {
+                    $.each(o.items, function(id, ob) {
 
-                    var titleTmpl = app.template['sideMenuChildrenTemplate'];
+                        var titleTmpl = app.template['sideMenuChildrenTemplate'];
 
-                    titleTmpl = titleTmpl.replace('{{ title }}', ob.title);
-                    titleTmpl = titleTmpl.replace(/{{ id }}/g, id + '-' + i + '-' + index);
-                    titles.push(titleTmpl);
+                        titleTmpl = titleTmpl.replace('{{ title }}', ob.title);
+                        titleTmpl = titleTmpl.replace(/{{ id }}/g, id + '-' + i + '-' + index);
+                        titles.push(titleTmpl);
+                    });
+
+                    tmpl = tmpl.replace('{{ id }}', 'desc-' + i + '-' + index);
+                    tmpl = tmpl.replace('{{ title }}', category);
+                    tmpl = tmpl.replace('{{ children }}', titles.join('\n\r'));
+
+                    categoryHTML.push(tmpl);
                 });
 
-                tmpl = tmpl.replace('{{ id }}', 'desc-' + i + '-' + index);
-                tmpl = tmpl.replace('{{ title }}', category);
-                tmpl = tmpl.replace('{{ children }}', titles.join('\n\r'));
+                var categoryResult = '<div class="main-category" data-id="' + index + '"><span class="progress"><span></span></span>' +
+                    '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
+                    categoryHTML.join('\n\r') + '</ul></div>'
+                $(categoryResult).appendTo('[data-template=side-menu]');
 
-                categoryHTML.push(tmpl);
-            });
-
-            var categoryResult = '<div class="main-category" data-id="' + index + '"><span class="progress"><span></span></span>' +
-                '<h3 class="category-title">' + mainTitle + '</h3><ul>' +
-                categoryHTML.join('\n\r') + '</ul></div>'
-            $(categoryResult).appendTo('[data-template=side-menu]');
-
-            app.initSVG();
-
+                app.initSVG();
+            }
         });
 
         jQuery(document).trigger('contentInitiated');
@@ -311,7 +319,6 @@ var app = {
                 jQuery(this).parent().find('> ul').slideUp();
             }
         });
-
 
         jQuery(document).on('click', '.main-category > ul > li span', function() {
             // Open the menu
@@ -413,96 +420,104 @@ var app = {
             // Seed checklist parent
             app.checkList[index] = [];
 
-            $.get('./markdowns/' + o.file).done(function(data) {
-                // Convert the markdown to HTML
-                var $html = $('<div class="html"></div>').append(marked(data));
-
-                // Store the main title of the markdown
-                var $title = $html.find('> h1').eq(0);
-
-                if ($title.length) {
-                    mainTitle = $title[0].innerText || $title[0].textContent;
-                } else {
-                    mainTitle = "Untitled Documentation"
+            if (o.file === undefined) {
+                app.savedData[index] = {
+                    title: o.name,
+                    link: o.link
                 }
+            } else {
+                $.get('./markdowns/' + o.file).done(function(data) {
+                    // Convert the markdown to HTML
+                    var $html = $('<div class="html"></div>').append(marked(data));
 
-                // Get the main description
-                $html.find('> h1').eq(0).nextUntil('.html > h2').wrapAll('<div class="main-description"></div>');
+                    // Store the main title of the markdown
+                    var $title = $html.find('> h1').eq(0);
 
-                var $mainDescription = $html.find('.main-description');
-
-                if ($mainDescription.length) {
-                    mainDescription = $mainDescription[0].innerText || $mainDescription[0].textContent;
-                } else {
-                    mainDescription = "Just another awesome documentation";
-                }
-
-                // Loop the html to explode the h2 into categories
-                var $categories = $html.find('> h2'),
-                    lastID = $categories.length - 1;
-
-                $categories.each(function(i, o) {
-
-                    $(o).nextUntil('.html > h2').wrapAll('<div class="category"></div>');
-
-                    // Prepend a div so we can select the description
-                    $(o).next('.category').prepend('<div class="desc-node"></div>');
-                    $(o).next('.category').find('.desc-node').nextUntil('.category > h3').wrapAll('<div class="description"></div>');
-
-                    var $description = $(o).next('.category').find('.description');
-
-                    var desc;
-                    if ($description.length) {
-                        desc = $description[0].innerHTML;
+                    if ($title.length) {
+                        mainTitle = o.name;
                     } else {
-                        desc = "";
+                        mainTitle = "Untitled Documentation"
                     }
 
-                    // Check if is there any h3 heading
-                    $titles = $(o).next('.category').find('> h3');
+                    // Get the main description
+                    $html.find('> h1').eq(0).nextUntil('.html > h2').wrapAll('<div class="main-description"></div>');
 
-                    var itemArr = [];
-                    if ($titles.length > 0) {
-                        // Find h3s of each category
-                        $titles.each(function(id, ob) {
-                            $(ob).nextUntil('.category > h3').wrapAll('<div class="item"></div>');
+                    var $mainDescription = $html.find('.main-description');
 
-                            // Store the item title and content
-                            var $content = $(ob).next('.item')[0].outerHTML;
+                    if ($mainDescription.length) {
+                        mainDescription = $mainDescription[0].innerText || $mainDescription[0].textContent;
+                    } else {
+                        mainDescription = "Just another awesome documentation";
+                    }
 
-                            // Push data
-                            var itemObj = {
-                                title: $(ob)[0].innerText || $(ob)[0].textContent,
-                                content: app.syntaxHighlightingFixes($content)
-                            };
+                    // Loop the html to explode the h2 into categories
+                    var $categories = $html.find('> h2'),
+                        lastID = $categories.length - 1;
 
-                            itemArr.push(itemObj);
+                    $categories.each(function(i, o) {
 
-                            // Seed data for checklist
-                            app.checkList[index].push({
-                                ID: id + "-" + i + "-" + index,
-                                checked: false
+                        $(o).nextUntil('.html > h2').wrapAll('<div class="category"></div>');
+
+                        // Prepend a div so we can select the description
+                        $(o).next('.category').prepend('<div class="desc-node"></div>');
+                        $(o).next('.category').find('.desc-node').nextUntil('.category > h3').wrapAll('<div class="description"></div>');
+
+                        var $description = $(o).next('.category').find('.description');
+
+                        var desc;
+                        if ($description.length) {
+                            desc = $description[0].innerHTML;
+                        } else {
+                            desc = "";
+                        }
+
+                        // Check if is there any h3 heading
+                        $titles = $(o).next('.category').find('> h3');
+
+                        var itemArr = [];
+                        if ($titles.length > 0) {
+                            // Find h3s of each category
+                            $titles.each(function(id, ob) {
+                                $(ob).nextUntil('.category > h3').wrapAll('<div class="item"></div>');
+
+                                // Store the item title and content
+                                var $content = $(ob).next('.item')[0].outerHTML;
+
+                                // Push data
+                                var itemObj = {
+                                    title: $(ob)[0].innerText || $(ob)[0].textContent,
+                                    content: app.syntaxHighlightingFixes($content)
+                                };
+
+                                itemArr.push(itemObj);
+
+                                // Seed data for checklist
+                                app.checkList[index].push({
+                                    ID: id + "-" + i + "-" + index,
+                                    checked: false
+                                });
                             });
-                        });
-                    }
+                        }
 
-                    var categoryObj = {
-                        items: itemArr,
-                        name: $(o)[0].innerText || $(o)[0].textContent,
-                        description: desc
-                    };
+                        var categoryObj = {
+                            items: itemArr,
+                            name: $(o)[0].innerText || $(o)[0].textContent,
+                            description: desc
+                        };
 
-                    mainCategory.push(categoryObj);
+                        mainCategory.push(categoryObj);
+                    });
+
+                    app.savedData[index].categories = mainCategory;
+                    app.savedData[index].description = mainDescription;
+                    app.savedData[index].title = mainTitle;
                 });
+            }
+            if (index == (markdownLength - 1)) {
+                console.log(app.savedData, 'saved');
+                app.initContentHandler(app.savedData);
 
-                app.savedData[index].categories = mainCategory;
-                app.savedData[index].description = mainDescription;
-                app.savedData[index].title = mainTitle;
-
-                if (index == (markdownLength - 1)) {
-                    app.initContentHandler(app.savedData);
-                }
-            });
+            }
         });
     },
     syntaxHighlightingFixes: function(html) {
