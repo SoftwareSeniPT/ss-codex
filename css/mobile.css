@@ -1,0 +1,80 @@
+/* Smaller than tablet */
+
+@media (max-width: 780px) {}
+
+
+/* Smartphone */
+
+@media (max-width: 450px) {
+    .styleguide #content .topic,
+    .logo {
+        -webkit-transform: translateX(-250px);
+        -ms-transform: translateX(-250px);
+        transform: translateX(-250px);
+    }
+    .styleguide #content .outer {
+        padding-left: 0;
+    }
+    .styleguide #content .hero h1 {
+        font-size: 35px;
+    }
+    .styleguide #content .hero p {
+        font-size: 17px;
+        margin: 15px 0;
+    }
+    .on-first-page #content .desc .hero {
+        padding: 30px;
+    }
+    .styleguide #content .hero #learn-more {
+        font-size: 18px;
+        padding: 1px 15px;
+    }
+    .styleguide #content .hero #learn-more img {
+        width: 12px;
+    }
+    #search-form .search-input {
+        padding: 25px 65px 24px 0px;
+        font-size: 17px;
+        left: 70px;
+        width: auto;
+    }
+    .styleguide #content .desc .hero {
+        min-height: 300px;
+    }
+    .styleguide #content .desc .title {
+        padding-top: 30px;
+    }
+    .styleguide #content .desc .text,
+    .styleguide #content .desc .title {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #content h2 {
+        font-size: 30px;
+    }
+    #hamburger {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 23px 13px 23px 30px;
+        z-index: 30;
+    }
+    /* Offcanvas */
+    .hamburger-open,
+    .hamburger-open #content,
+    .hamburger-close,
+    .hamburger-close #content {
+        overflow: hidden;
+    }
+    .hamburger-open #content .move-left {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .hamburger-open #content .move-right {
+        -webkit-transform: translateX(250px);
+        -ms-transform: translateX(250px);
+        transform: translateX(250px);
+    }
+}
