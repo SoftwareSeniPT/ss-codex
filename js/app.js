@@ -317,12 +317,17 @@ var app = {
             // Open the menu
             jQuery('.main-category > ul > li').not(jQuery(this).parent()).removeClass('opened');
             jQuery('.main-category > ul > li ul').slideUp();
+            var $list = jQuery(this).parent().find('ul');
             if (!jQuery(this).parent().hasClass('opened')) {
-                jQuery(this).parent().addClass('opened');
-                jQuery(this).parent().find('ul').slideDown();
+                if ($list.find('li').length) {
+                    jQuery(this).parent().addClass('opened');
+                    jQuery(this).parent().find('ul').slideDown();
+                }
             } else {
-                jQuery(this).parent().removeClass('opened');
-                jQuery(this).parent().find('ul').slideUp();
+                if ($list.find('li').length) {
+                    jQuery(this).parent().removeClass('opened');
+                    jQuery(this).parent().find('ul').slideUp();
+                }
             }
         })
     },
