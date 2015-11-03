@@ -230,7 +230,7 @@ var app = {
         jQuery.each(data, function(index) {
             if (this.link !== undefined) {
                 var categoryResult = '<div class="main-category">' +
-                    '<h3 class="category-title"><a href="'+this.link+'" target="_blank">' + this.title + '</a></h3></div>'
+                    '<h3 class="category-title"><a href="' + this.link + '" target="_blank">' + this.title + '</a></h3></div>'
                 $(categoryResult).appendTo('[data-template=side-menu]');
             } else {
                 // Init the title
@@ -614,27 +614,29 @@ var app = {
             $searchWrapper.html('');
 
             $.each(app.savedData, function(index, obj) {
-                $.each(obj.categories, function(i, o) {
-                    if (o.items.length > 0) {
-                        $.each(o.items, function(id, ob) {
-                            var content = ob.content.replace(/(<([^>]+)>)/ig, "").replace(/(&lt;([^>]+)&gt;)/ig, ""),
-                                lowerCaseContent = content.toLowerCase();
-                            lowerCaseTitle = ob.title.toLowerCase()
-                            pos = lowerCaseContent.search(val);
+                if (obj.link === undefined) {
+                    $.each(obj.categories, function(i, o) {
+                        if (o.items.length > 0) {
+                            $.each(o.items, function(id, ob) {
+                                var content = ob.content.replace(/(<([^>]+)>)/ig, "").replace(/(&lt;([^>]+)&gt;)/ig, ""),
+                                    lowerCaseContent = content.toLowerCase();
+                                lowerCaseTitle = ob.title.toLowerCase()
+                                pos = lowerCaseContent.search(val);
 
-                            if ((pos != -1 || lowerCaseTitle.search(val) != -1) && val != "") {
-                                searchResult.push({
-                                    pos: pos,
-                                    content: {
-                                        title: ob.title,
-                                        content: content,
-                                        ID: id + "-" + i + "-" + index
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
+                                if ((pos != -1 || lowerCaseTitle.search(val) != -1) && val != "") {
+                                    searchResult.push({
+                                        pos: pos,
+                                        content: {
+                                            title: ob.title,
+                                            content: content,
+                                            ID: id + "-" + i + "-" + index
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
             });
 
             if (searchResult.length > 0) {
