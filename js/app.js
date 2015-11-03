@@ -216,7 +216,6 @@ var app = {
         loader.show();
 
         $(document).on('contentInitiated', function() {
-            console.log('init');
 
             $('#loader').removeClass('opening');
             loader.hide();
@@ -514,9 +513,7 @@ var app = {
                 });
             }
             if (index == (markdownLength - 1)) {
-                console.log(app.savedData, 'saved');
                 app.initContentHandler(app.savedData);
-
             }
         });
     },
