@@ -19,7 +19,29 @@ CSS is an ordered, exception based language and there is no easy way for a file 
 So you have two choices: You can either live in denial, grumbling that “specificity shouldn’t be part of CSS” as you try to force a square peg into a round hole, or you can work in one, well-commented file that clearly represents the arc of your inheritance-harnessing cascade. Specificity should never be a problem because the most specific selectors should be the last ones you write.
 
 ### Nesting
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, molestiae.
+If it possible, always avoid writing too much selectors for referencing on CSS. 3 depths selector is fine. But always keep on mind to not make it too general. It will cause problems with other selectors.
+
+Good:
+```css
+#header .navbar .navbar-menu {
+  ...
+}
+```
+
+Bad (too specific):
+```css
+#header .top .navbar .navbar-left .navbar-menu {
+  ...
+}
+
+```
+
+Bad (too general):
+``````css
+.navbar-menu {
+  ...
+}
+```
 
 ### Commenting
 The most important thing when it comes to code etiquette is commenting. Comment everything, even if it seems obvious to you it needs to be commented. This is especially true for the main javascript file.
@@ -45,7 +67,6 @@ Bad:
 ```
 
 ## HTML
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
 
 ### Reducing Markup
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML.
@@ -65,7 +86,7 @@ Bad:
 Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.
 
 ## Naming
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
+Always use a semantic approach to CSS or JS up to a certain point. The idea is for you to be able to read them and get some idea of what the HTML would look like.
 
 ### CSS Selectors
 Class names should all be lower case, with hyphens as spaces. So use work-grid, not WorkGrid or work_grid.
@@ -123,15 +144,63 @@ logoLarge.svg
 ``` 
 
 ## CSS
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi deleniti error alias. Iusto itaque ipsum architecto illum in, labore, quo explicabo doloremque. Numquam quis sunt dignissimos ea, voluptatibus nesciunt officia?
 
 ### Prefixing
 Don't forget to always prefixing the stylesheet to avoid the cross browser issues on the future. There are numbers of CSS auto prefixing tools app or online services that can do that, like:
 - Prepos (App, available for windows, linux and OSX)
 - http://autoprefixer.github.io
 
+### Indenting
+Use soft tabs with four spaces. It will make the code easy to read.
+
+Good:
+```css
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #8E8E8E;
+}
+
+footer a {
+    color: #2e7e83;
+}
+```
+
+Bad:
+```css
+footer {
+text-align: center;
+padding: 20px;
+font-size: 14px;
+color: #8E8E8E;
+}
+
+footer a {
+color: #2e7e83;
+}
+```
+
+### Preprocessors
+Use your preferred CSS preprocessor. You can use SASS or LESS, but keep in mind that always be consistent. If the last developer was using SASS, please keep using it when you continue the project. 
+
+Keep attention to this list when working with CSS preprocessor:
+- Don't use too much nesting. It will make your compiled CSS become too big.
+- Don't minify the compiled CSS unless the project is on production stage. 
+- Always put variable if possible. Variable could be color code, background color, font name.
+
+### CSS Reset
+CSS reset is a must! It will prevent issues with cross browser and make things easier to style. We prefer to use normalize.css to resetting the css.
+
+Don't forget to reset box-sizing to border-box for every element This allows us to more easily assign widths to elements that also have padding and borders
+
+```css
+* {
+    box-sizing: border-box;
+}
+```
+
 ## Javascript
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eveniet culpa quisquam architecto distinctio fugit perspiciatis doloremque nobis aut consequatur impedit voluptas hic eum quos repellat, nesciunt voluptates dolore rem?
 
 ### Setup
 Put all the main JavaScript for the site in one file.
@@ -158,7 +227,6 @@ jQuery(document).ready(function($){
 });
 ```
 ## Responsive Web Design
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, cumque.
 
 ### Breakpoint
 
@@ -202,17 +270,11 @@ body * + * {
 }
 ```
 
-
-
 ## Performance
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque atque ipsum omnis explicabo modi iste autem saepe alias natus odit. Perspiciatis aliquam numquam corporis minima fugiat consequatur a sit. Incidunt.
 
-
-
-
 ## Testing 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem voluptatum blanditiis in rem. Sapiente id perspiciatis earum mollitia quibusdam, fugit a officia! Eum optio est sed, quaerat quis dolor.
-
 
 ### Basic Checklist
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem voluptatum blanditiis in rem. Sapiente id perspiciatis earum mollitia quibusdam, fugit a officia! Eum optio est sed, quaerat quis dolor.
