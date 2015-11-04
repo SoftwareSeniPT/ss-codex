@@ -13,6 +13,7 @@
 */
 
 var app = {
+    // Define all the markdown files here
     markdowns: [{
         name: 'Getting Started',
         file: 'getting-started.md'

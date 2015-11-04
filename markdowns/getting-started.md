@@ -13,4 +13,5 @@ SS Codex is an open project for SS, meaning you can directly impact its evolutio
 
 
 ## Change Log
-October 30th, 2015 - Added markup for quality assurance
+- November 4th, 2015 - Updated documentation for frontend (Rudi W.)
+- October 30th, 2015 - Added documentation for quality assurance (Ganis A.)
