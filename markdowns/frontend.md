@@ -3,7 +3,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi odio quas solu
 
 
 ## General Guidelines
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quam, numquam voluptatem quod laboriosam facilis amet quisquam minima cupiditate suscipit mollitia eligendi vel quos quis obcaecati, ut veniam vitae nisi!
 
 ### Avoid Multiple Files
 A lot of web development seems to be about splitting things up into manageable chunks or “components”. For each discrete bit of javascript functionality or each HTML partial I might make a dedicated file, then organize related files into folders named javascript and html or controllers and templates. Whatever you like. This way, you can easily dip into the file system and focus on just the file containing the code you want to edit at the time.
@@ -160,6 +159,8 @@ jQuery(document).ready(function($){
 ```
 ## Responsive Web Design
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, cumque.
+
+### Breakpoint
 
 ### PX Unit
 Managing sizes using pixels in responsive design is an absolute hog. The lack of relativity between separate elements’ sizes means you have to treat each setting as a separate concern, for each separate breakpoint. In fact, using pixels you even have to manage the font size and margin of single, isolated elements separately. You really don’t want to do that.

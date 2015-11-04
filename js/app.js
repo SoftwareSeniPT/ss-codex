@@ -42,9 +42,9 @@ var app = {
         name: 'Contribute',
         link: 'https://github.com/SoftwareSeniPT/ss-codex'
     }],
-    savedData: [],
-    template: {},
-    checkList: [],
+    savedData: [], // keep the data after all markdowns are compiled
+    template: {}, // keep template HTML
+    checkList: [], // store the items in array
     init: function($) {
         app.dataLoadingAnimation();
         app.animateTitle();
@@ -481,7 +481,12 @@ var app = {
                                 $(ob).nextUntil('.category > h3').wrapAll('<div class="item"></div>');
 
                                 // Store the item title and content
-                                var $content = $(ob).next('.item')[0].outerHTML;
+                                if($(ob).next('.item').length) {
+                                    var $content = $(ob).next('.item')[0].outerHTML;
+                                } else {
+                                    var $content = "";
+                                }
+                                
 
                                 // Push data
                                 var itemObj = {
