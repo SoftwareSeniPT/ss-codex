@@ -505,6 +505,10 @@ header a {
     padding-top: 60px;
 }
 
+.styleguide #content ul {
+    padding-left: 17px;
+}
+
 .styleguide #content .desc .check {
     position: absolute;
     top: 50%;

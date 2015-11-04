@@ -22,8 +22,47 @@ So you have two choices: You can either live in denial, grumbling that “specif
 ### Nesting
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, molestiae.
 
+### Commenting
+The most important thing when it comes to code etiquette is commenting. Comment everything, even if it seems obvious to you it needs to be commented. This is especially true for the main javascript file.
+
+Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.
+
+Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
+
+Good:
+```css
+/* Modal header */
+.modal-header {
+  ...
+}
+```
+
+Bad:
+```css
+/* Wrapping element for .modal-title and .modal-close */
+.modal-header {
+  ...
+}
+```
+
 ## HTML
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
+
+### Reducing Markup
+Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML.
+Good:
+```html
+<span class="avatar">
+  <img src="...">
+</span>
+```
+
+Bad:
+```html
+<img class="avatar" src="..."> 
+```
+### JS Generated Markup
+Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.
 
 ## Naming
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
@@ -86,6 +125,11 @@ logoLarge.svg
 ## CSS
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi deleniti error alias. Iusto itaque ipsum architecto illum in, labore, quo explicabo doloremque. Numquam quis sunt dignissimos ea, voluptatibus nesciunt officia?
 
+### Prefixing
+Don't forget to always prefixing the stylesheet to avoid the cross browser issues on the future. There are numbers of CSS auto prefixing tools app or online services that can do that, like:
+- Prepos (App, available for windows, linux and OSX)
+- http://autoprefixer.github.io
+
 ## Javascript
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eveniet culpa quisquam architecto distinctio fugit perspiciatis doloremque nobis aut consequatur impedit voluptas hic eum quos repellat, nesciunt voluptates dolore rem?
 
@@ -113,9 +157,6 @@ jQuery(document).ready(function($){
     });
 });
 ```
-### Commenting
-The most important thing when it comes to code etiquette is commenting. Comment everything, even if it seems obvious to you it needs to be commented. This is especially true for the main javascript file.
-
 ## Responsive Web Design
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, cumque.
 
