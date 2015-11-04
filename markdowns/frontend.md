@@ -50,6 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis
 
 ### Reducing Markup
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML.
+
 Good:
 ```html
 <span class="avatar">
