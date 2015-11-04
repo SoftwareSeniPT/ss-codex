@@ -25,11 +25,96 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, molestiae.
 ## HTML
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
 
+## Naming
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur qui nobis, quos repellendus alias esse fugit placeat eius asperiores distinctio magni, doloremque pariatur dolor perferendis, totam animi architecto explicabo cum.
+
+### CSS Selectors
+Class names should all be lower case, with hyphens as spaces. So use work-grid, not WorkGrid or work_grid.
+
+Good:
+```css
+  .block-slideshow { 
+    font-size: 22px; 
+    margin-top: 33px; 
+  } 
+```
+
+Bad:
+```css
+  .blockSlideshow { 
+    font-size: 22px; 
+    margin-top: 33px; 
+  } 
+
+  .block_footer { 
+    background-color: #000;
+  } 
+```
+
+### JS Variable
+Variables should be camel cased like initMenu or initVideoDetail.
+
+Good:
+```javascript
+  var headerHTML = jQuery('#header').html(); 
+```
+
+Bad:
+```javascript
+  var header-HTML = jQuery('#header').html();
+  var footer_visibility = false; 
+```  
+
+### Image Icon Naming
+Icons and image assets should be named describing what they are, not what they represent. Use hyphens as spaces, never use underscore or camel cased naming. A logo name should starts with "logo" and and icon name starts with "icon".
+
+Good:
+```
+logo-small.svg
+icon-envelope.svg
+icon-arrow-left.svg
+```
+
+Bad:
+```
+icon-email.svg
+icon-previous.svg
+icon_arrow.svg
+logoLarge.svg
+``` 
+
 ## CSS
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi deleniti error alias. Iusto itaque ipsum architecto illum in, labore, quo explicabo doloremque. Numquam quis sunt dignissimos ea, voluptatibus nesciunt officia?
 
 ## Javascript
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eveniet culpa quisquam architecto distinctio fugit perspiciatis doloremque nobis aut consequatur impedit voluptas hic eum quos repellat, nesciunt voluptates dolore rem?
+
+### Setup
+Put all the main JavaScript for the site in one file.
+
+To avoid any namespace issues and keep things simple, all the main logic of the site gets wrapped in one large object. This allows you to turn off entire sections of the code, or change the run order, which makes debugging easier. It has the added benefit of providing a clear way to safely set global values. Look at this example:
+```javascript
+var app = {
+    init: function() {
+        // Size things
+        app.setWinSize();
+    },
+
+    setWinSize: function({
+        // Set window size
+        app.winHeight = jQuery(window).height();
+        app.winWidth = jQuery(window).width();
+    }
+};
+jQuery(document).ready(function($){
+    app.init();
+    jQuery(window).resize(function(){
+        app.onResize();
+    });
+});
+```
+### Commenting
+The most important thing when it comes to code etiquette is commenting. Comment everything, even if it seems obvious to you it needs to be commented. This is especially true for the main javascript file.
 
 ## Responsive Web Design
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, cumque.
