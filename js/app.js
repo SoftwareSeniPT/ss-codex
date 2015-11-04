@@ -47,7 +47,6 @@ var app = {
     checkList: [], // store the items in array
     init: function($) {
         app.dataLoadingAnimation();
-        app.animateTitle();
         app.animateCheckIconOnHover();
         app.initTemplate();
         app.changeTopic();
@@ -61,11 +60,6 @@ var app = {
     },
     onResize: function() {
 
-    },
-    animateTitle: function() {
-        $(document).on('pageAnimationDone', function() {
-            $('body').removeClass('animate-title');
-        });
     },
     animateCheckIconOnHover: function() {
 
@@ -243,13 +237,15 @@ var app = {
 
                 jQuery('body').addClass('on-first-page');
 
+                var contentHTML = app.contentLinkInit('desc', 0, index);
+
                 if (description !== undefined) {
                     // Check if there is any description
                     var tmpl = app.template['mainContentTemplate'],
                         content = description;
 
                     tmpl = tmpl.replace('{{ title }}', title);
-                    tmpl = tmpl.replace('{{ content }}', content);
+                    tmpl = tmpl.replace('{{ content }}', content + contentHTML);
                     tmpl = tmpl.replace('{{ id }}', 'desc-0');
                     tmpl = tmpl.replace('{{ class }}', 'no-check');
                     tmpl = '<div class="content-desc-0-' + index + '" data-id="desc-0-' + index + '">' + tmpl + '</div>';
@@ -263,7 +259,7 @@ var app = {
                         content = items[0]['content'];
 
                     tmpl = tmpl.replace('{{ title }}', title);
-                    tmpl = tmpl.replace('{{ content }}', content);
+                    tmpl = tmpl.replace('{{ content }}', content + contentHTML);
                     tmpl = tmpl.replace('{{ id }}', '0-0');
                     tmpl = tmpl.replace('{{ class }}', '');
                     tmpl = '<div class="content-0-0' + index + '" data-id="0-0' + index + '">' + tmpl + '</div>';
@@ -383,8 +379,10 @@ var app = {
                         classes = '';
                 }
 
+                var contentHTML = app.contentLinkInit(itemID, parentID, grandParentID);
+
                 tmpl = tmpl.replace('{{ title }}', title);
-                tmpl = tmpl.replace('{{ content }}', content);
+                tmpl = tmpl.replace('{{ content }}', content + contentHTML);
                 tmpl = tmpl.replace('{{ id }}', id);
                 tmpl = tmpl.replace('{{ class }}', classes);
 
@@ -394,6 +392,22 @@ var app = {
                 app.initSVG();
             }
         });
+    },
+    contentLinkInit: function(itemID, parentID, grandParentID) {
+        var contentHTML = "";
+        if (jQuery.isArray(app.savedData[grandParentID].categories[parentID]['items']) && app.savedData[grandParentID].categories[parentID]['items'].length > 0 && itemID == 'desc') {
+
+            var contentArr = [];
+            jQuery.each(app.savedData[grandParentID].categories[parentID]['items'], function(index) {
+                var title = '<li><span data-id="'+index+'-'+parentID+'-'+grandParentID+'" data-item-select>' + this.title + '</span></li>';
+                contentArr.push(title);
+            });
+
+            if (contentArr.length > 0) {
+                contentHTML = "<ul class='bottom-links'>" + contentArr.join('') + "</ul>";
+            }   
+        }
+        return contentHTML;
     },
     parseMarkDown: function() {
         // set ajax to sync
@@ -481,12 +495,12 @@ var app = {
                                 $(ob).nextUntil('.category > h3').wrapAll('<div class="item"></div>');
 
                                 // Store the item title and content
-                                if($(ob).next('.item').length) {
+                                if ($(ob).next('.item').length) {
                                     var $content = $(ob).next('.item')[0].outerHTML;
                                 } else {
                                     var $content = "";
                                 }
-                                
+
 
                                 // Push data
                                 var itemObj = {

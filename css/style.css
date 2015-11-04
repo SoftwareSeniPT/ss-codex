@@ -505,6 +505,10 @@ header a {
     padding-top: 60px;
 }
 
+.bottom-links {
+    margin-top: 20px;
+}
+
 .styleguide #content ul {
     padding-left: 17px;
 }
