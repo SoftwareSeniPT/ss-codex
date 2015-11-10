@@ -30,6 +30,8 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 
 Since we are creating new website for new clients, so all initial request should come from PM first. 
 
+![2015-11-10_16h14_30](https://cloud.githubusercontent.com/assets/15763875/11059449/62986a46-87cc-11e5-812a-76fd1cb6a02d.png)
+
 1. PM will assign to BE to setup and content integration.
 2. Once Setup done, PM will assign to FE to style the website.
 3. Once the styling done, QA will received full test ticket. Check based on initial request from client. You can check from mockup document (Desktop and Breakpoint). Ask PM for the document.
