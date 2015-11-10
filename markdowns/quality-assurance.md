@@ -32,7 +32,7 @@ Since we are creating new website for new clients, so all initial request should
 
 ![2015-11-10_16h14_30](https://cloud.githubusercontent.com/assets/15763875/11059449/62986a46-87cc-11e5-812a-76fd1cb6a02d.png)
 
-1. PM will assign to BE to setup and content integration.
+1. PM will assign to BE to setup and content integration. 
 2. Once Setup done, PM will assign to FE to style the website.
 3. Once the styling done, QA will received full test ticket. Check based on initial request from client. You can check from mockup document (Desktop and Breakpoint). Ask PM for the document.
 4. If you find bugs, you need to create the issues on Phabicator and assign to BE/FE. Check again these bugs after BE/FE have already fixed.
