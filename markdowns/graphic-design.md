@@ -88,3 +88,119 @@ Right aligned, centered, and asymmetrical text is more difficult to read. The st
 Left aligned and justified text is easier to read because each line starts at the same place. Readers do not have to find the start of each line, which promotes vertical scanning.
 
 ![align](https://cloud.githubusercontent.com/assets/15760221/11085741/b1e8c2d0-87fe-11e5-9f5b-b3b5b760ad07.png)
+
+
+## Tips and Trick
+
+### Using 960 Grid System
+
+960 Grid System is a transparent grid which you use to keep your boxes aligned and even in photoshop. The 960gs comes in 12, 16, and 24 column versions.
+
+**Step 1: Download 960gs**
+
+Download 960gs package [Here](https://github.com/nathansmith/960-Grid-System/archive/master.zip). This download will come with templates for all kinds of software, all we will really need is the photoshop ones.
+
+**Step 2: Open in Photoshop**
+
+Open up the download and go the photoshop directory (templates>photoshop/). In the photoshop folder you will find the 3 templates (12, 16, and 24).
+
+![open](https://cloud.githubusercontent.com/assets/15760221/11113732/116af1da-88d4-11e5-91f3-8d37d8b955e0.png)
+
+The 12 column template is best fitted for simple layouts, and the 24 column is for complex layouts. Open the template in photoshop. The layers window will look like this:
+
+![layer](https://cloud.githubusercontent.com/assets/15760221/11113752/4aafbf16-88d4-11e5-9c7e-a0a54db28a22.png)
+
+
+**Step 3: New Document**
+
+Now open a fresh document for your layout (1366×1000). Now switch back to the 960 template and drag and drop the “16 col grid” layer to your new layout. Center the “16 col grid” vertically and horizontally.
+
+![workspace](https://cloud.githubusercontent.com/assets/15760221/11113767/60073560-88d4-11e5-8781-abe5f0a153e3.png)
+
+
+**How do I design with it?**
+
+That’s it, your all set up. To use it, you simply leave the grid overlaying everything else, and align elements of your layout to it. Here’s and example (taken from 960.gs):
+
+![9607 copy](https://cloud.githubusercontent.com/assets/15760221/11113835/d2d4127a-88d4-11e5-8e42-34b759c8e380.png)
+
+
+### Free Images Stock
+
+If client doesn't provide image, don't using images drom google. Please get images from stock image bellow:
+
+- picjumbo.com
+- unsplash.com
+- freeimages.com (username:fajarss password:123456)
+- pixabay.com (username:fajarss password:12345)
+- kaboompics.com
+- stockphotos.io
+- photopin.com
+- pexels.com
+- freemagebank.com
+- freeuse.io
+
+
+### Recommended Font
+
+**Open Sans** [Download Here](http://www.fontsquirrel.com/fonts/download/open-sans)
+
+![font](http://cdn4.fontsquirrel.com/fnt_imgs/62/9a55/a7e793da068dc580d184cc0e31/sp-720.png)
+
+
+
+
+
+**Lato** [Download Here](http://www.fontsquirrel.com/fonts/download/lato)
+
+![font](http://cdn1.fontsquirrel.com/fnt_imgs/3b/9b99/039cc0a98dd50c3cbfac57ccb2/sp-720.png)
+
+
+
+
+
+**Roboto** [Download Here](http://www.fontsquirrel.com/fonts/download/roboto)
+
+![font](http://cdn2.fontsquirrel.com/fnt_imgs/54/a91b/0619ccf9373d525109268219dc/sp-720.png)
+
+
+
+
+
+**Raleway** [Download Here](http://www.fontsquirrel.com/fonts/download/raleway)
+
+![font](http://cdn2.fontsquirrel.com/fnt_imgs/2d/4cd8/722065da2ac700199273325752/sp-720.png)
+
+
+
+
+
+**Source Sans** [Download Here](http://www.fontsquirrel.com/fonts/download/source-sans-pro)
+
+![font](http://cdn2.fontsquirrel.com/fnt_imgs/d6/cd47/77dc581913c8b247b8bd44e02b/sp-720.png)
+
+
+
+
+
+**Montserrat** [Download Here](http://www.fontsquirrel.com/fonts/download/montserrat)
+
+![font](http://cdn1.fontsquirrel.com/fnt_imgs/27/e50f/fd6a14cbc8221c9dbd3b5208dc/sp-720.png)
+
+
+
+
+
+**Muli** [Download Here](http://www.fontsquirrel.com/fonts/download/muli)
+
+![font](http://cdn5.fontsquirrel.com/fnt_imgs/df/7330/254513d2fa2f4c1e9ee98cc6c6/sp-720.png)
+
+
+
+
+
+**Ubuntu** [Download Here](http://www.fontsquirrel.com/fonts/download/ubuntu)
+
+![font](http://cdn2.fontsquirrel.com/fnt_imgs/1c/5965/c2b1dcdea439b54c3ac60cee38/sp-720.png)
+
+
