@@ -66,7 +66,16 @@ Bad:
 }
 ```
 
+### Reduce image file size 
+
+Reduce image file size is by using the "Save for Web" command in Adobe Photoshop. When using this command, you want to adjust the image to the lowest file size acceptable while keeping an eye out for image quality.
+
+A good rule of thumb for ecommerce images is to try to keep your image file size below 70kb. That can be difficult sometimes, especially for larger images, so you can use larger file size no more than 200kb.
+
 ## HTML
+
+### Readjust HTML
+You FrontEnds are allowed to readjust the HTML whenever you think the mockup of the new site has a different layout with the template. Believe me, the good structure will save your time on styling, moreover while facing IE.
 
 ### Reducing Markup
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML.
@@ -143,6 +152,34 @@ icon_arrow.svg
 logoLarge.svg
 ``` 
 
+### Setting the Viewport
+
+HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+
+You should include the following <meta> viewport element in all your web pages:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+
+The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+
+Users are used to scroll websites vertically on both desktop and mobile devices - but not horizontally!
+
+So, if the user is forced to scroll horizontally, or zoom out, to see the whole web page it results in a poor user experience.
+
+Some additional rules to follow:
+
+1. Do NOT use large fixed width elements - For example, if an image is displayed at a width wider than the viewport it can cause the viewport to scroll horizontally. Remember to adjust this content to fit within the width of the viewport.
+
+2. Do NOT let the content rely on a particular viewport width to render well - Since screen dimensions and width in CSS pixels vary widely between devices, content should not rely on a particular viewport width to render well.
+
+3. Use CSS media queries to apply different styling for small and large screens - Setting large absolute CSS widths for page elements, will cause the element to be too wide for the viewport on a smaller device. Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.
+
 ## CSS
 
 ### Prefixing
@@ -180,6 +217,16 @@ footer a {
 color: #2e7e83;
 }
 ```
+
+### Unit sizes
+
+CSS has four different unit sizes you can use for your margins, borders, fonts, etc. These are pixels (px), points (pt), ems (em) and percentages (%).
+
+We can separate these units in two different groups, fixed and relative. Pixels (px) and points (pt) are fixed, whereas em and percents(%) are relative unit sizes. Relative unit sizes are really powerful when creating scalable layouts. Fixed size units are good to use when you always want the same element size no matter where you place it.
+
+CSS3 introduces a few new units, including the rem unit, which stands for “root em”.  The rem unit is relative to the root—or the html—element.  It fixes the problem of sizing relative to the context encountered when using ems.
+
+Point values are only for print! A point is a unit of measurement used for real-life ink-on-paper typography. 72pts = one inch. One inch = one real-life inch like-on-a-ruler. Not an inch on a screen, which is totally arbitrary based on resolution. Point (pt) is not recommended to use in web pages since cross-browser results can be very different.
 
 ### Preprocessors
 Use your preferred CSS preprocessor. You can use SASS or LESS, but keep in mind that always be consistent. If the last developer was using SASS, please keep using it when you continue the project. 
@@ -228,7 +275,120 @@ jQuery(document).ready(function($){
 ```
 ## Responsive Web Design
 
+### Responsive width
+
+Setting the width of a block-level element will prevent it from stretching out to the edges of its container to the left and right. Then, you can set the left and right margins to auto to horizontally center that element within its container. The element will take up the width you specify, then the remaining space will be split evenly between the two margins.
+
+The only problem occurs when the browser window is narrower than the width of your element. The browser resolves this by creating a horizontal scrollbar on the page. 
+
+Using max-width instead of width in this situation will improve the browser's handling of small windows. This is important when making a site usable on mobile. Resize this page to check it out!
+
+By the way, max-width is supported by all major browsers including IE7+ so you shouldn't be afraid of using it.
+
+Use percentage as width and give maximum width in pixel
+
+Good:
+```css
+.wrapper {
+   width:100%;
+   max-width: 1024px;
+   margin: 0 auto;
+}
+```
+
+Bad:
+```css
+.wrapper {
+   width: 1024px;
+   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {   
+  .wrapper {
+    width: 100%;
+  }
+}
+```
+
+### Responsive image
+
+Make sure when you crop ALL images across the sites you DO NOT play with the ratio of the images. NEVER stretch images. You reduce the width of an image so it is the same size as the container and then the height is reduced in the same ratio. If the height is then bigger than the container you hide the top and bottom of the image through the css.
+
+example:
+
+html:
+```html
+<div class="images">
+  <span>
+    <img src="...">
+  </span>
+</div>
+```
+
+css:
+```css
+.image {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 70%;
+  position: relative;
+  width: 100%;
+}
+
+span {
+  height: 200%;
+  left: -50%;
+  position: absolute;
+  top: -50%;
+  width: 200%;
+}
+
+img {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  min-height: 50%;
+  min-width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+```
+
+
+### Box sizing
+
+Over the generations, people realized that math is not fun, so a new CSS property called box-sizing was created. When you set box-sizing: border-box; on an element, the padding and border of that element no longer increase its width. Here is the same example as the previous page, but with box-sizing: border-box; on both elements:
+
+sample:
+```css
+.border-box {
+  width: 500px;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+```
+
+Since this is so much better, some authors want all elements on all their pages to always work this way. Such authors put the following CSS on their pages:
+```css
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+```
+
+This ensures that all elements are always sized in this more intuitive way.
+
+Since box-sizing is pretty new, you should use the -webkit- and -moz- prefixes for now, as I have in these examples. This technique enables experimental features in specific browsers. Also, keep in mind that this one is IE8+.
+
 ### Breakpoint
+
+Adding a breakpoint when the content is no longer easy to consume.
+
+With this fundamental shift in thinking we no longer have to fear a new device — a new iPhone width — because we've already fixed our sites to work everywhere.
 
 ### PX Unit
 Managing sizes using pixels in responsive design is an absolute hog. The lack of relativity between separate elements’ sizes means you have to treat each setting as a separate concern, for each separate breakpoint. In fact, using pixels you even have to manage the font size and margin of single, isolated elements separately. You really don’t want to do that.
@@ -277,7 +437,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque atque ipsum omn
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem voluptatum blanditiis in rem. Sapiente id perspiciatis earum mollitia quibusdam, fugit a officia! Eum optio est sed, quaerat quis dolor.
 
 ### Basic Checklist
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem voluptatum blanditiis in rem. Sapiente id perspiciatis earum mollitia quibusdam, fugit a officia! Eum optio est sed, quaerat quis dolor.
+Use your responsive media view in your browser and resize it. If all look good when you resize it, then it would not cause much trouble when QA check it on real devices.
 
 ### Code Checklist
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem voluptatum blanditiis in rem. Sapiente id perspiciatis earum mollitia quibusdam, fugit a officia! Eum optio est sed, quaerat quis dolor.
