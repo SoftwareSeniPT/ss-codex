@@ -176,9 +176,39 @@ Since we are creating new website for new clients, so all initial request should
 4. For checking your ticket: http://projects.softwareseni.com/maniphest/
  
 
-**D.  Note For Testing Process**
+**D. Note For Testing Process**
 
 1. Take a look at the Project Docs first and understand what client want.
 2. Also check the Mockups design.
 3. While testing, do not forget to fill and update the Checklist.
 4. If there are something unclear about the project or anything, ask PM or anyone.
+
+**E. Quality Assurance Role**
+
+Of course the **main task for QA staff is to assure quality standard as requested by client based on tickets and documentation.** 
+In other word, QA staff should make sure the works from developers are done exactly as requested by clients to meet the expected delivery date.
+
+On daily basis, some things need to be checked on are:
++ Checking hyperlink in the whole site linked to appropriate pages.
++ Checking for missing content (static text and images)
++ Checking the spelling and grammar of content.
++ Checking the image file size to make sure not too large and not slowing the loading time.
++ Checking for browser compatibility both on desktop and responsive view. 
++ Checking all forms are working correctly and the mandatory warning appear.
++ Checking the vcs calendar to appear correctly on google calendar.
++ Checking the website design appear exactly like the client wants. Always check the overview how the client wish the sites to appear.
++ Maintaining good communication to Developers and Project Managers
++ Give solution to Developers and Project Managers if any requests unable to complete exactly as requested by clients
++ Documenting any new issues with new testing method if any to QA shared document.
+
+**F. Quality Assurance Checklist**
+
+A checklist is needed to reduce failure by compensating for potential limits of our memory and attention. And also, it helps us to ensure consistency and completeness in carrying out a task.
+
+There are two kinds of Checklist for Spotzer Team, *Demo Site Checklist* and *Live Site Checklist*. 
+
+For the *Demo Site Checklist* you can find it in  https://docs.google.com/spreadsheets/d/11vwjHA47iRW_mAmsMkhgdffgr8yxMqg1fxajfe85FaY/edit?ts=563031f7#gid=1530176155
+
+And for the *Live Site Checklist* you can find it in https://docs.google.com/spreadsheets/d/1OgQmV-eeDGkPOThUs2uoUySmtPjJRK-xvQTT3egxVk8/edit#gid=831255455
+
+The checklist is still on developing. So, if you think it need some improvement, dont hesitate to tell your supervisor about it.
