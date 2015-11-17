@@ -33,6 +33,66 @@ Please ask your manager to give short introduction to zoo, and then you can lear
 
 For checking your ticket: http://accounts.agentpoint.com.au/todo-list/
 
+**E. Ticket and Comment format**
+
+When creating ticket on APhub, we need to follow some format to make the ticket more effective, it means the ticket will easy to understand from every side ( developer, designer, QA ).
+here is the format sample:
+
+![untitled](https://cloud.githubusercontent.com/assets/15761212/11201375/3448f338-8d10-11e5-91ca-a33c973b40d1.png)
+
+The ticket standard template:
+
+**Title** : Title should reflect the main problem, instead just “ Please complete ASAP” or “ issue on homepage”. But there are some exception if the ticket are from client feedback which is usually contain several issue on several section and pages, we can use number behind the title to make it easy if we want track the ticket, eg: “ client feedback #1 “
+
+**Ticket description:**
+
+Please mention the name, so we can identify to whom the ticket assigned to.
+
+Please give the issues location ( the page link, section, or element )
+
+Tell the issue, if possible tell the step how we can found the issue, or what is the effect of issue.
+
+give the solution, there are 2 kind of solution, based on client request or we’ll leave it to developer.
+
+If there is a attachment, please mention it on the comment, and thanks them.
+
+**Note:**
+
+If there is a different platform issue ( dekstop, windows or mac / responsive ) please mention the device detail eg: “ occurs on iphone 6 IOS v. 9.1 landscape”  This additional information would help developer and designer to make the work quicker.
+
+Please give attachment name same with the issues, or page.
+
+please give the attachment, when the issue occurs so developer, designer or QA can compare the result ( especially for display issue)
+
+please give a mark ( square or arrow ) on attachment on the issue occurs, instead of just attach with no explanation.
+
+
+
+**Here is some suggestion from developer:**
+
+in ticket description, if the order need to add something, please give ( + ) mark on the beginning of the section.
+
+in ticket description, if the order need to remove something, please give ( - ) mark on the beginning of the section.
+
+in ticket description, if the order need to modify/update something, please give ( * ) mark on the beginning of the section.
+
+
+**And here is the comment format:**
+
+![new comment](https://cloud.githubusercontent.com/assets/15761212/11202446/e34b1d34-8d1a-11e5-8f97-fa4770df47c1.png)
+
+1. Please mention the name, so we can identify to whom the ticket assigned to.
+
+2. Please give the issues location ( the page link, section, or element )
+
+3. Tell the issue, if possible tell the step how we can found the issue, or what is the effect of issue.
+
+4. give the solution, there are 2 kind of solution, based on client request or we’ll leave it to developer.
+
+5. Please give the issues location ( the page link, section, or element )
+
+6. If there is a attachment, please mention it on the comment, and thanks them.
+
 
 ### Setup document
 
