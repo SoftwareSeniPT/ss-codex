@@ -334,5 +334,237 @@ Please make sure the quick search on homepage is working fine.
 Do the test by searching on all values.
 
 
+### Launch document
 
-By default, the template contains extra boilerplate structure to account for Woocommerce pages and functionality. Every time a new site is started, make sure you determine whether or not the store/Woocommerce components will be needed. If you won't be needing them (most sites), follow these steps:
+
+#### Launch 1
+
+
+**1. Adjust office id in wp admin so ONLY those listings from office appear - no test data.**
+
+go to WP ADMIN > Zoo Realty > General Setting, and then on Office Id section, make sure the id 26 not appear.
+
+![launch 1](https://cloud.githubusercontent.com/assets/15761212/11087504/6daf9b40-888d-11e5-8982-2afb2ca56cb3.png)
+
+
+**2. Check that there is no ipad or mobile redirect code on the theme unless the client has a mobile or ipad site.**
+
+go to WP ADMIN > APPEARANCE > THEME SETTING, and then make sure in section Mobile site Url and Ipad site url not is empty. Unless the client has mobile or iPad site.
+
+Need to check also on iPad and Mobile view, if the site is open properly, means that there is no redirect code.
+
+![launch 12](https://cloud.githubusercontent.com/assets/15761212/11087584/2b1f1da4-888e-11e5-9da7-735af0922292.png)
+
+
+**3. Add new API Plugin then update a property in zoo and check that the changes and images are being processed on live site.**
+
+go to WP ADMIN > PLUGINS > INSTALLED PLUGINS, and then make sure the Zoo Super API is set as the latest version.
+
+![launch 13](https://cloud.githubusercontent.com/assets/15761212/11087640/9fa78706-888e-11e5-9a0c-f2159dcb79b9.png)
+
+go to Client’s Zoo account, and then try to edit any available listing. On Property Description, at the end of the description, add text “test”. Once you are done, click “Submit” button.
+
+
+![launch 14](https://cloud.githubusercontent.com/assets/15761212/11087684/fe222b74-888e-11e5-8189-561d6feee872.png)
+
+
+
+Now go the site and access that property details page. Take a look at its description, and then notice whether the text “test” you input appear or not. If appear, then the zoo is working perfectly. If not appear, wait for any minutes for zoo need to update the listings. If up to an hour the listing not appear, please contact the developer.
+
+If this testing is success, please make sure to remove the “test” text and click Submit button again.  
+
+
+**4. Adjust api in zoo and set up so listings from that office are sent and delete any demo API urls for that office in Zoo. Make sure we are using the Websites (NEW) API.**
+
+go to client’s API section.
+
+on Zoo Super API section, please make sure there is no demo site url appear there. If demo site url still appear, please manage with the developer.
+
+![launch 15](https://cloud.githubusercontent.com/assets/15761212/11087887/8d963696-8890-11e5-9f3d-e1a568594b81.png)
+
+
+**5. Check the same amount of listings appear on the website as Zoo and resend listings if needed.**
+
+go to client’s Zoo Dashboard.
+
+On Office Statistic, there will appear number of A (Available) listings. Make sure the number appear in the same amount as in the websites.
+
+![launch16](https://cloud.githubusercontent.com/assets/15761212/11088027/9bdc0702-8891-11e5-98ab-334ceea2a529.png)
+
+
+**6. Setup google analytics and add code to header or theme settings.**
+
+go to WP ADMIN > APPEARANCE > THEME SETTING, and on the section “Google Analytics tracking Number* (e.g. UA - 123456-78)” make sure the code appear.
+
+or, go to WP ADMIN > APPEARANCE > EDITOR, and on the right section, click on “Header” / “Footer”  and search for Googleanalytics. If there appear the code, meaning that the analytics code are already there.
+
+or, on the site homepage, right click and then click “View Page Source”, search for Googleanalytics and make sure the code appear there.
+
+
+
+![launch 17](https://cloud.githubusercontent.com/assets/15761212/11088122/6bf9ab10-8892-11e5-8347-7a32c11aed9b.png)
+
+
+**7. Setup sitemaps plugin and create the sitemap. add the website to google.com/webmasters , verify the website and submit the sitemap in there.**
+
+access http://www.google.com/webmasters/ and then sign in as rhinoogrady with password: z00pr00perty
+
+find the site you are checking on and then click. Once you are inside that site, click on tab “Sitemaps” and then you will expected to see the /sitemap.xml. Click on it. You will land on “Sitemap index” page.
+
+On Sitemap index, click on /sitemap.xml again, so it will open new tab. Make sure the url of the new tab appear the same as the live site.
+
+![launch 18](https://cloud.githubusercontent.com/assets/15761212/11108255/e7aae870-8917-11e5-9411-c20122c67f2e.png)
+
+
+**8. Check that internal links added to pages and posts through wp-page manager have been updated from demo.thatid.com.  Make sure you do a search for demo on all pages and posts**
+
+On live site, please check all the hyperlink and all images. Make sure the link not directed to demosite. This include the PDF file saved.
+
+we can use this tools to check: http://demo.thatid.com/template3/wp-admin/ ( admin pass: admin ) go to “Qatoolb” plugin,on the left side menu. insert the link on the field and check the 3 option below, then click “go”.
+
+*this tools is not compatible with the portal website yet.
+
+![launch 19](https://cloud.githubusercontent.com/assets/15761212/11108318/8d897b12-8918-11e5-8b85-8948256e7bb2.png)
+
+note: Please also check manual per page to make sure.
+
+
+**9. Make sure the demo domain is marked as Launched in AgentpointHUB and update the launch date field with the current date and change status of client from Production to Active.**
+
+Check on client’s AP HUB, on Overview > Client Details tab, make sure the Status is updated from Production to Active.
+
+
+![launch 120](https://cloud.githubusercontent.com/assets/15761212/11108354/db806b50-8918-11e5-9dda-ffee230183ed.png)
+
+
+**10. Setup, and test the SM Plugin along with the cron in plesk to send alerts once per week on Thursday at 10.00am. Send sample to the PM.**
+
+Access AP Host https://webhost.agentpoint.com.au/ and then find client’s account
+
+Access cronjob button, and then make sure the code appear is 0 10 * * 4
+
+Make sure on the Command tab the client’s live site appear.
+
+
+![launch 121](https://cloud.githubusercontent.com/assets/15761212/11108554/4421bac8-891a-11e5-9530-f0e25d155a72.png)
+
+
+**11. Please enable Akismet and add password**
+
+Go to WP ADMIN > PLUGINS > INSTALLED PLUGINS, and then make sure the Akismet is active.
+
+
+**12. Check Simple 301 Redirects setting**
+
+go to WP ADMIN > PLUGINS > INSTALLED PLUGINS, if there is no 301 redirects plugins appear, you can just leave it.
+
+If there is 301 redirect plugins appear, access Setting, and then please check the url linked to the appropriate page depends on source and destination.
+
+
+**13. Add SEO plugin to the site and activate.**
+
+Go to WP ADMIN > PLUGINS > INSTALLED PLUGINS, and then make sure the All in One SEO Pack is active.
+
+
+**14. Please check that “Email me whenever” is unchecked in wp-admin – settings – discussions**
+
+Go to WP ADMIN > SETTINGS > DISCUSSION and then on Email me Whenever, please make sure tick box is unchecked.
+
+
+![launch 122](https://cloud.githubusercontent.com/assets/15761212/11108772/8a92a146-891c-11e5-909c-c904770566cc.png)
+
+
+**15. SEO Plugin Check**
+
+Make sure `all in one seo pack` on property page is disabled.
+
+1. go to wp page manager
+
+2. edit `property` page
+
+3. tick `Disable on this page/post` on `all in one seo pack` section
+
+4. save
+
+Go to WP ADMIN > PAGES, and then find Property page, click edit. At the bottom section, please make sure the “Disable on this page/post” are ticked.
+
+![launch 123](https://cloud.githubusercontent.com/assets/15761212/11108794/d2171b46-891c-11e5-9763-f950067ccf77.png)
+
+
+#### Launch 2
+
+**1.  Put your email and the Project Manager's in all forms and test, make sure you receive all forms and the logo and format is appropriate. If you do not receive an email or the logo is incorrect please put ticket up for developer.**
+
+go to WP ADMIN > FORMS > Edit Notification > and then change “Send to Email” and “From Email” to your agentpoint email address. Add PM’s email so it will be qaemail@agentpoint.com.au, pmemail@agentpoint.com.au
+
+![launch 21](https://cloud.githubusercontent.com/assets/15761212/11109036/f7c559fa-891e-11e5-90bc-4dd0d210bb13.png)
+
+go to WP ADMIN > ZOO SUBSCRIBER > Setting > and then change the email address to your agentpoint email address.
+
+![launch22](https://cloud.githubusercontent.com/assets/15761212/11109081/7057d474-891f-11e5-88f1-639a04a138fd.png)
+
+go to webhost https://webhost.agentpoint.com.au/ , (1) tap “Accounts” tab. (2) Click by index and then (3) search for domain of the live site , (4) click “details”. Then (5) Click “open PHPMyAdmin. (6) Click “Database” tab. (7) find the live site domain and click. (8) Now find user (9) and then change agent’s email into your agentpoint account.
+
+Now go to the demo site and then please perfrom checking on all forms. Make sure the logo appear on email received and the data correct.
+
+
+**2. Put your email and the Project Manager's in a property and do a property enquiry.**
+
+On Property details page and Team details page, there appear Email Agent, please check the form twice. One to your email, and one for PM.
+
+
+**3. Make sure the BCC is the client email in WP.**
+
+Changes your email and PM email into client’s email in Gravity form, Subscription manager, and revert back the agent’s email in web host.
+
+Go to WP ADMIN > ZOO REALTY > GENERAL SETTING, and then change “Email Sent From” into info@clientcompany and “BCC All Mail To” into client’s email.
+
+
+![launch 23](https://cloud.githubusercontent.com/assets/15761212/11110815/6e374f4e-8933-11e5-9ec4-532fba2c0fab.png)
+
+When you are done, leave a comment stated that all forms have been changed into client’s email clientemail@client.com.au and ask advise if client wish to be different email address. And then assign back ticket to PM.
+
+
+Reassign ticket to Project Manager
+
+A) PM put in the customer's emails in all forms
+
+B) Enter data in all forms including property enquiries
+
+C) Confirm with customer that form emails have been received.
+
+
+#### Launch 3
+
+
+**1. Check there is no php code calling the server. If there is then correct it**
+
+
+**2. Check the error logs on the server for the site. If there are any errors then please fix the code.**
+
+The best way to check this ticket is the next day after developer completed this task. For example, dev done on Wednesday, you should leave the comment to PM stated that “to make sure that there is no error log appear, the best for us to wait up to the next day. I will hold this ticket”. Don’t assign this ticket to PM. Just make sure the next day you check it as priority.
+
+To check on error logs, go to https://webhost.agentpoint.com.au/home and then find client’s account.
+
+
+![launch 31](https://cloud.githubusercontent.com/assets/15761212/11111812/53ade046-893f-11e5-867e-c4342d0cefc6.png)
+
+If you find the client account, click on “Logs” button.
+
+
+![launch 32](https://cloud.githubusercontent.com/assets/15761212/11111819/742168a2-893f-11e5-83f9-3b5fde9d93c2.png)
+
+Once you are inside, there will appear Access Logs and Error Logs. You need to check on the Error Logs section. There are two scenarios here:
+
+If the Error Logs are clear, you can just leave it and close the tickets.
+
+If the Error Logs still appear, please ask the developer whether the logs is only a warning (then we can just leave) or about the bug need developer to fix (then assign the tickets back to developer)
+
+
+
+![launch 33](https://cloud.githubusercontent.com/assets/15761212/11111834/9a15a974-893f-11e5-95a3-09eb4f78afb7.png)
+
+
+
+
+
