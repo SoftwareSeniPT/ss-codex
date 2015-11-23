@@ -573,5 +573,34 @@ If the Error Logs still appear, please ask the developer whether the logs is onl
 
 
 
+### Dummy Social media account 
 
 
+![facebook-logo](https://cloud.githubusercontent.com/assets/15761212/11330992/174c4254-91e7-11e5-9d0f-2f0331b9de6a.png)
+
+
+Email:  newdev.ap@gmail.com
+
+Password: M5jyL9B2hO
+
+
+![twitter-logo-small](https://cloud.githubusercontent.com/assets/15761212/11330999/22a008a2-91e7-11e5-82c1-786d2bdaaf48.png)
+
+
+email: testagentpoint@gmail.com
+
+password: agentpoint
+
+
+![linkedin_logo](https://cloud.githubusercontent.com/assets/15761212/11331005/32795242-91e7-11e5-92a6-89ecdd5e38c7.png)
+
+email: testagentpoint@gmail.com
+
+password: agentpoint
+
+
+![pinterest-icon](https://cloud.githubusercontent.com/assets/15761212/11331013/4dcf5dca-91e7-11e5-9098-655d1dbc33ed.png)
+
+Email: testagentpoint@gmail.com
+
+Password: agentpoint
