@@ -243,6 +243,13 @@ go to WP ADMIN > ZOO SUBSCRIBER > Setting > and then change the email address to
 
 ![setup 42](https://cloud.githubusercontent.com/assets/15761212/11086817/5998cc54-8887-11e5-8a74-7e5bb5ace3cd.png)
 
+We can change the agent email from WP admin > 'zoo realty' > 'The team' and change the agent email.
+
+This feature applied automatically on 'zoo realty' version 3.1 or above but for version bellow 3.1 we can request developer to add 
+
+![zoo realty](https://cloud.githubusercontent.com/assets/15761212/11328524/d8786c24-91be-11e5-8169-38d0e6913628.png)
+
+
 go to webhost https://webhost.agentpoint.com.au/ , (1) tap “Accounts” tab. (2) Click “T” and then (3) search for domain thatid.com , (4) click “details”. Then (5) Click “open PHPMyAdmin. (6) Click “Database” tab. (7) find the thatid_[client site] and click. (8) Now find user (9) and then change agent’s email into your agentpoint account.
 Now go to the demo site and then please perform checking on all forms. Make sure the logo appear on email received.
 
