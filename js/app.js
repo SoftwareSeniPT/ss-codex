@@ -39,6 +39,9 @@ var app = {
         name: 'Ruby',
         file: 'ruby.md'
     }, {
+        name: 'Project Spotzer',
+        file: 'project-spotzer.md'
+    }, {
         name: 'Contribute',
         link: 'https://github.com/SoftwareSeniPT/ss-codex'
     }],
@@ -405,7 +408,7 @@ var app = {
 
             if (contentArr.length > 0) {
                 contentHTML = "<ul class='bottom-links'>" + contentArr.join('') + "</ul>";
-            }   
+            }
         }
         return contentHTML;
     },
@@ -735,7 +738,7 @@ var app = {
         });
     },
     initSVG: function() {
-        // Set total and counter 
+        // Set total and counter
         var $svgs = $('img.svg');
         var total = $svgs.length;
         var count = 0;
