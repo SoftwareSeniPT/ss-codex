@@ -94,6 +94,23 @@ in ticket description, if the order need to modify/update something, please give
 6. If there is a attachment, please mention it on the comment, and thanks them.
 
 
+### First day training
+
+Before we start the real project,  let’s start with training project.
+
+Let’s start with open this link: http://demo.thatid.com/lillytheme/  please create separate ticket for designer and developer on this link: http://accounts.agentpoint.com.au/project/training-project-129228755/
+
+![new qa](https://cloud.githubusercontent.com/assets/15761212/11433064/0700096a-94eb-11e5-84f2-8e9cc919bbbe.png)
+
+using the ticket format on “New QA document”  and please assign the ticket to the correct developer and designer ( please ask your superior ) 
+
+please check all the function and display, including:
+
+check all the form, make sure all email received and logo displayed. ( how to check form can find on setup 4 or launch 2 document )
+
+You may use this checklist as reference: http://hub.softwareseni.co.id/#!/documentation/62 
+
+
 ### Setup document
 
 #### Setup 1
