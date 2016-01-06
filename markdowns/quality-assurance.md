@@ -502,7 +502,7 @@ On Sitemap index, click on /sitemap.xml again, so it will open new tab. Make sur
 
 On live site, please check all the hyperlink and all images. Make sure the link not directed to demosite. This include the PDF file saved.
 
-we can use this tools to check: http://demo.thatid.com/template3/wp-admin/ ( admin pass: admin ) go to “Qatoolb” plugin,on the left side menu. insert the link on the field and check the 3 option below, then click “go”.
+we can use this tools to check: http://demo.thatid.com/lillytheme/wp-admin/ ( admin pass: VjH833dRKDM ) go to “Qatoolb” plugin,on the left side menu. insert the link on the field and check the 3 option below, then click “go”.
 
 *this tools is not compatible with the portal website yet.
 
@@ -585,6 +585,14 @@ go to WP ADMIN > ZOO SUBSCRIBER > Setting > and then change the email address to
 
 ![launch22](https://cloud.githubusercontent.com/assets/15761212/11109081/7057d474-891f-11e5-88f1-639a04a138fd.png)
 
+We can change the agent email from WP admin > 'zoo realty' > 'The team' and change the agent email.
+
+This feature applied automatically on 'zoo realty' version 3.1 or above but for version bellow 3.1 we can request developer to add 
+
+![zoo realty](https://cloud.githubusercontent.com/assets/15761212/11328524/d8786c24-91be-11e5-8169-38d0e6913628.png)
+
+Or we can change it from PHPMyAdmin
+
 go to webhost https://webhost.agentpoint.com.au/ , (1) tap “Accounts” tab. (2) Click by index and then (3) search for domain of the live site , (4) click “details”. Then (5) Click “open PHPMyAdmin. (6) Click “Database” tab. (7) find the live site domain and click. (8) Now find user (9) and then change agent’s email into your agentpoint account.
 
 Now go to the demo site and then please perfrom checking on all forms. Make sure the logo appear on email received and the data correct.
@@ -655,7 +663,6 @@ If the Error Logs still appear, please ask the developer whether the logs is onl
 
 
 Email:  newdev.ap@gmail.com
-
 Password: M5jyL9B2hO
 
 
@@ -663,21 +670,18 @@ Password: M5jyL9B2hO
 
 
 email: testagentpoint@gmail.com
-
 password: agentpoint
 
 
 ![linkedin_logo](https://cloud.githubusercontent.com/assets/15761212/11331005/32795242-91e7-11e5-92a6-89ecdd5e38c7.png)
 
 email: testagentpoint@gmail.com
-
 password: agentpoint
 
 
 ![pinterest-icon](https://cloud.githubusercontent.com/assets/15761212/11331013/4dcf5dca-91e7-11e5-9098-655d1dbc33ed.png)
 
 Email: testagentpoint@gmail.com
-
 Password: agentpoint
 
 ## Spotzer Team
