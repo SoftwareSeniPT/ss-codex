@@ -349,6 +349,10 @@ var app = {
       var hash = location.hash.substring(1);
       $(document).trigger('changeTopic', [hash]);
 
+      if(hash === "") {
+        return false;
+      }
+
       // Open the submenu
       if (jQuery("[data-id=" + hash + "]").length) {
           jQuery("[data-id=" + hash + "]").parents("li").addClass("opened").find('> ul').slideDown();;
