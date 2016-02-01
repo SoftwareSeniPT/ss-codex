@@ -179,4 +179,5 @@ What we invoice to client:
  *If a site is hosted on one of our server, we start charging them from the moment the A Record redirection is done.
  * Migration is an action of moving one site from a server to another.
 ### The process for Invoices are:
-When a site is “linked” to the client (first draft delivered to client)
+<div class="note">When a site is “linked” to the client (first draft delivered to client)</div>
+
