@@ -164,3 +164,19 @@ The steps to be followed once brief is received from Spotzer.
 ## Quote Process
 
 ## Invoice Process
+### Introduction
+What we invoice to client:
+* New site
+ * This is added to the invoice on the first site draft delivery. We call it (LINK)
+* Full time resources
+ * If staff is requested for specific work, outside In production work.
+* Add-ons
+ * Based on Quote request from Client. Using this Form
+ * It could be also extra work for a project in Production
+* Adjustments to Live Sites
+ * Based on Quote request from Client. Using this Form
+* Hosting / Migration
+ *If a site is hosted on one of our server, we start charging them from the moment the A Record redirection is done.
+ * Migration is an action of moving one site from a server to another.
+### The process for Invoices are:
+When a site is “linked” to the client (first draft delivered to client)
