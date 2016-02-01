@@ -171,16 +171,18 @@ What we invoice to client:
 * Full time resources
  * If staff is requested for specific work, outside In production work.
 * Add-ons
- * Based on Quote request from Client. Using this Form
+ * Based on Quote request from Client. Using this <a href="https://docs.google.com/spreadsheets/d/1hEBwBKLb-iD5bb2z0GqFmUXoR1-Ot4iTf7A5-lZKdmI/edit?usp=sharing" target="_blank">Form</a>
  * It could be also extra work for a project in Production
 * Adjustments to Live Sites
- * Based on Quote request from Client. Using this Form
+ * Based on Quote request from Client. Using this <a href="https://docs.google.com/spreadsheets/d/1hEBwBKLb-iD5bb2z0GqFmUXoR1-Ot4iTf7A5-lZKdmI/edit?usp=sharing" target="_blank">Form</a>
 * Hosting / Migration
  * If a site is hosted on one of our server, we start charging them from the moment the A Record redirection is done.
  * Migration is an action of moving one site from a server to another.
-### The process for Invoices are:
+ 
+### The process for Invoices
 #### When a site is “linked” to the client (first draft delivered to client)
-* SDM can then add the project to the Invoice Document here. (A “link” site is the first draft delivered to client). Data can be retrieved from the Document here. You will need to create 1 Document for 1 month.
+
+* SDM can then add the project to the Invoice Document <a href="https://drive.google.com/folderview?id=0B-ZRk02Xg9MJd2JEMTh4TWFKSEk&usp=sharing" target="_blank">here</a>. (A “link” site is the first draft delivered to client). Data can be retrieved from the Document <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=54380997" target="_blank">here</a>. You will need to create 1 Document for 1 month (just duplicate the latest month).
 * Careful not to change to much, as it is using predefined scripts.
 ![alt text](/images/invoice.png "Invoice template")
 * SDM can update it later, if any new work is done within the same month, otherwise, add it on the next month as an Add-ons.
@@ -192,13 +194,13 @@ What we invoice to client:
 * Make sure to check the actual number of pages, that was created for the project by logging in on the WP-Admin of  the site. And add the extra pages on the Out of Scope. (OoS are Extra pages from the original brief, or extra layout from the original basic package)
  * PMs need to make sure to look for the Published pages, and that no test pages are still published.
  * If the project has e-Commerce, PMs need to see how many categories were created, and add that quantity to the number of pages on the site.
-PMs to Talk to the FE Manager, to find out if Extra Layout were created. But it should be also located in the Project Timeline Extra Work sheet/tab.
+PMs to Talk to the FE Manager, to find out if Extra Layout were created. But it should be also located in the <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=1254666119" target="_blank">Project Timeline Extra Work sheet/tab</a>.
 
 #### At the end of the month
 * SDM to ask Lyle how many Days she worked on Spotzer. And add the number of days on G3.
-* Add any Out-of-Scope work from a site in Production, and the cost based on time, work on it. you can find those information from the Project Timeline Extra Work sheet/tab. Remember to ask PMs if anything is missing.
-* Add any Adjustments, Maintenance or Revision made on a Live site, based on the approved quote, delivered to Spotzer, or from the Project Timeline Extra Work sheet/tab.
-* Adjust the Monthly Hosting / Migration based on the status of the site in this document from the “Status” column. Migration is AU$11, and Hosting is AU$8. If any changes were made with the site (Migration or hosting) please change the Action status. You can ask PMs or Helmy (Server support) to make sure nothing is missing.
+* Add any Out-of-Scope work from a site in Production, and the cost based on time, work on it. you can find those information from the <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=1254666119" target="_blank">Project Timeline Extra Work sheet/tab</a>. Remember to ask PMs if anything is missing.
+* Add any Adjustments, Maintenance or Revision made on a Live site, based on the approved quote, delivered to Spotzer, or from the <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=1254666119" target="_blank">Project Timeline Extra Work sheet/tab</a>.
+* Adjust the Monthly Hosting / Migration based on the status of the site in this <a href="https://docs.google.com/spreadsheets/d/1GrHx4QYoT-4fcbdj7WgiEwcGFmiUBft2Z6pAMULNlp0/edit#gid=0" target="_blank">document</a> from the “Status” column. Migration is AU$11 (30min), and Hosting is AU$8. If any changes were made with the site (Migration or hosting) please change the Action status. You can ask PMs or Helmy (Server support) to make sure nothing is missing.
  * Hosted = We host the site on one of our server, but we didn’t develop it.
  * Live = We host the site on one of our server, and we DID develop it
  * Migration = We migrate the site from one server to another.
