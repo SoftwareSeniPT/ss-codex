@@ -182,7 +182,7 @@ What we invoice to client:
 ### The process for Invoices
 #### When a site is “linked” to the client (first draft delivered to client)
 
-* SDM can then add the project to the Invoice Document <a href="https://drive.google.com/folderview?id=0B-ZRk02Xg9MJd2JEMTh4TWFKSEk&usp=sharing" target="_blank">here</a>. (A “link” site is the first draft delivered to client). Data can be retrieved from the Document <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=54380997" target="_blank">here</a>. You will need to create 1 Document for 1 month (just duplicate the latest month).
+* SDM can then add the project to the Invoice Document (for access, ask the SDM or GM). (A “link” site is the first draft delivered to client). Data can be retrieved from the Document <a href="https://docs.google.com/spreadsheets/d/1URxbCmZH_8cMSj0yeG6ZhRDdn56eW5eLsAJ7dkJsIPQ/edit#gid=54380997" target="_blank">here</a>. You will need to create 1 Document for 1 month (just duplicate the latest month).
 * Careful not to change to much, as it is using predefined scripts.
 ![alt text](/images/invoice.png "Invoice template")
 * SDM can update it later, if any new work is done within the same month, otherwise, add it on the next month as an Add-ons.
