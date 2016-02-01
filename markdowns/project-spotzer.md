@@ -159,5 +159,8 @@ The steps to be followed once brief is received from Spotzer.
 6. Reply to the Spotzer PM with any feedback, questions, quotes and a link to the Design Overview document 
 7. Begin with creating the first tickets.
 
-
 ## QA Process
+
+## Quote Process
+
+## Invoice Process
