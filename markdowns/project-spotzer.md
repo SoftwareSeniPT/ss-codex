@@ -164,6 +164,38 @@ The steps to be followed once brief is received from Spotzer.
 ## Quote Process
 ### Process Diagram
 ![alt text](/images/Quote Diagram process.png "Quote Diagram process")
+### Detailed Process
+#### Starter Quote Process
+1. Before starting a new project, the client will contact SoftwareSeni PIC to discuss about it.
+2. From the discussion it will be decided whether or not a new project needs a quote. The process continues with...
+ * If the project needs a quote, then the client will create the quote using a special form which will be sent to SoftwareSeni for tech and design evaluation, including estimated time of delivery.
+ * If not, then the process will continue to no. 4
+* Tech evaluation will then be sent back to the client for approval.
+ * If the client approves, then the process will continue to no. 4
+ * If the client doesn’t approve it then the client must create a new quote and send it back to SS for tech evaluation again; this process will repeat until the client approves the quote.
+* Project—the one that doesn't need a quote and the one which quote is approved—is then created or modified on the Project Management Document.
+* The PMs create tickets using the PM Tool. (→proceed to Invoicing a Quote)
+
+#### Update Quote Process
+1. At the beginning of a project, the client will contact SoftwareSeni PIC to discuss about it.
+2. From the discussion it will be decided whether or not a new project needs a quote.
+ * SoftwareSeni will create/adjust the quote using a special form which is based on the new work provided; including the Estimated Time of Delivery.
+ * If not, then the process will continue to no. 4
+* Tech evaluation will then be sent back to the client for approval.
+ * If approved then the process will continue to no. 4
+ * If not approved then the client must create a new quote and send it back to SS for tech evaluation again; this process will repeat until the client approves the quote.
+* The project—the one that doesn't need a quote and the one which quote is approved—is then created or modified on the Project Management Document.
+* The PMs create tickets using the PM Tool. (→proceed to Invoicing a Quote)
+
+#### Invoicing a Quote
+In order to invoice a quote, the project types are divided into three: New Project, Existing Project, and Maintenance/Revision. Each project type has its own flow.
+1. New Project
+Based on the tickets made by the PMs, the new project is added to actual month invoices after a link status. It is then be sent to the client.
+2. Existing (In Production Add-ons)
+Based on the tickets made by the PMs, details of work is added to a specific document to keep its track. In production add-ons' extra work is added to the actual month invoice. It is then be sent to the client.
+3. Maintenance/Revision
+Extra work for the adjustments of live sites is added to the actual month invoice. It is then be sent to the client.
+
 
 ## Invoice Process
 ### Introduction
