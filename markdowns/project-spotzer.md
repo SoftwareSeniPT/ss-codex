@@ -162,6 +162,7 @@ The steps to be followed once brief is received from Spotzer.
 ## QA Process
 
 ## Quote Process
+### Process Diagram
 ![alt text](/images/Quote Diagram process.png "Quote Diagram process")
 
 ## Invoice Process
