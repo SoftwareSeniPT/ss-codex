@@ -696,10 +696,10 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 | Project Managers/Managers  | SPOTZER Staff              |   Department |
 | ------------- | ------------- |----- |
 | marc@softwareseni.com | andipurnama@softwareseni.com  | Back End Developer |
-| arsyi@softwareseni.com | arham@softwareseni.com | Back End Developer |
+| heryno@softwareseni.com | yanuar@softwareseni.com | Back End Developer |
 | gamma@softwareseni.com | olin@softwareseni.com | Back End Developer |
 | adryn@softwareseni.com | lyle@softwareseni.com | Front End Developer |
-| heryno@softwareseni.com | bayus@softwareseni.com | Front End Developer |
+|  | bayus@softwareseni.com | Front End Developer |
 |                         | faiz@softwareseni.com | Front End Developer |
 |                         | alfian@softwareseni.com | Front End Developer |
 |                         | lippo@softwareseni.com | Front End Developer |
