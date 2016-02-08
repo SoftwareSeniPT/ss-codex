@@ -692,15 +692,19 @@ Welcome to Spotzer Quality Assurance Team.
 
 First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you are confusing about something, you can ask via Gtalk or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Gtalk which you can add from time to time. Here is the list :
 
-|  **Mon Jan 18 2016** | :**Spotzer AU**: |  |  | :**Spotzer EU**: |
+|  **Mon Jan 18 2016** | **Spotzer AU** |  |  | **Spotzer EU** |
 |  ------ | :------: | :------: | :------: | :------: |
-|   | :-**J2WP**-: | :-**New Production**-: | :-**CFB / Maintenance**-: | :-**New Production**-: |
+|   | **J2WP** | **New Production** | **CFB / Maintenance** | **New Production** |
 |   | **Gamma** | **Gamma** | **Adryn** | **TBD** |
+
 |  Front-End | Joko | Alfian | Bayu | Faiz |
 |   |  | Victor (intern) |  |  |
+
 |  Back-End | Yanuar | Olin | Andi |  |
 |   | Fajar | Ken |  |  |
+
 |  QA | Nisa | Pram | Okky |  |
+
 |   | **Support / Managers** |  |  |  |
 |  Support FE | Rudi |  |  |  |
 |  Support BE | Heryno, Gigih |  |  |  |
