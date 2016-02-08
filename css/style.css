@@ -216,6 +216,10 @@ table {
     margin: 20px 0;
 }
 
+table.css3 tbody tr + tr td:nth-child(2) {
+    background-color: cyan;
+}
+
 #search-form .search-input {
     position: absolute;
     top: 0;
