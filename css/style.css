@@ -212,10 +212,9 @@ header a {
 
 table td, table th {border: 1px solid #C2D6D4;padding: 5px 17px;}
 
- table {
+table {
     margin: 20px 0;
 }
-
 
 #search-form .search-input {
     position: absolute;
