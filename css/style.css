@@ -210,6 +210,13 @@ header a {
     max-width: 980px;
 }
 
+table td, table th {border: 1px solid #C2D6D4;padding: 5px 17px;}
+
+ table {
+    margin: 20px 0;
+}
+
+
 #search-form .search-input {
     position: absolute;
     top: 0;
