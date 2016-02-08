@@ -220,7 +220,7 @@ table.css3 tbody tr + tr td:nth-child(2) {
     background-color: cyan;
 }
 .markdown-body table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 #search-form .search-input {
