@@ -701,8 +701,6 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 |  Back-End | Yanuar | Olin | Andi |  |
 |   | Fajar | Ken |  |  |
 |  QA | Nisa | Pram | Okky |  |
-
-|  ------ | :------: | :------: | :------: | :------: |
 |   | **Support / Managers** |  |  |  |
 |  Support FE | Rudi |  |  |  |
 |  Support BE | Heryno, Gigih |  |  |  |
