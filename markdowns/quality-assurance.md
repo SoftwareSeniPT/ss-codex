@@ -696,15 +696,13 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 |  ------ | :------: | :------: | :------: | :------: |
 |   | **J2WP** | **New Production** | **CFB / Maintenance** | **New Production** |
 |   | **Gamma** | **Gamma** | **Adryn** | **TBD** |
-
 |  Front-End | Joko | Alfian | Bayu | Faiz |
 |   |  | Victor (intern) |  |  |
-
 |  Back-End | Yanuar | Olin | Andi |  |
 |   | Fajar | Ken |  |  |
-
 |  QA | Nisa | Pram | Okky |  |
 
+|  ------ | :------: | :------: | :------: | :------: |
 |   | **Support / Managers** |  |  |  |
 |  Support FE | Rudi |  |  |  |
 |  Support BE | Heryno, Gigih |  |  |  |
