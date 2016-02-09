@@ -223,8 +223,12 @@ table.css3 tbody tr + tr td:nth-child(2) {
     background-color: #ffffff;
 }
 
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
 table tr:nth-child(even) {
-    background-color: #f8f8f8;
+    background-color: #eaf4f3;
 }
 
 #search-form .search-input {
