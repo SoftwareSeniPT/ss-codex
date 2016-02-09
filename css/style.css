@@ -223,6 +223,10 @@ table.css3 tbody tr + tr td:nth-child(2) {
     background-color: #ffffff;
 }
 
+table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
 #search-form .search-input {
     position: absolute;
     top: 0;
