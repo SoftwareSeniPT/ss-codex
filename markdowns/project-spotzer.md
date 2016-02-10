@@ -117,6 +117,20 @@ Ensure there is enough white space and that identical widgets have the same marg
 #### Site favicon is uploaded
 #### All images have alt-text
 
+## Spotzer Teams
+
+|  **Mon Feb 08 2016** | **Spotzer AU** |  |  | **Spotzer EU** |
+|  ------ | :------: | :------: | :------: | :------: |
+|   | **J2WP** | **New Production** | **CFB / Maintenance** | **New Production** |
+|   | **Gamma** | **Gamma** | **Adryn** | **TBD** |
+|  **Front-End** | Joko | Alfian | Bayu | Faiz |
+|   |  | Victor (intern) |  |  |
+|  **Back-End** | Yanuar | Olin | Andi |  |
+|   | Fajar | Ken |  |  |
+|  **QA** | Nisa | Pram | Okky | Pram |
+|  **Support FE** | Rudi, Lyle
+|  **Support BE** | Heryno, Gigih
+|  **Support Server** | Helmy, Gizipp
 
 ## PM Process
 ### Preparing Collateral Files
