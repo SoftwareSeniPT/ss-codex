@@ -692,20 +692,6 @@ Welcome to Spotzer Quality Assurance Team.
 
 First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you are confusing about something, you can ask via Gtalk or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Gtalk which you can add from time to time. Here is the list :
 
-|  **Mon Feb 08 2016** | **Spotzer AU** |  |  | **Spotzer EU** |
-|  ------ | :------: | :------: | :------: | :------: |
-|   | **J2WP** | **New Production** | **CFB / Maintenance** | **New Production** |
-|   | **Gamma** | **Gamma** | **Adryn** | **TBD** |
-|  **Front-End** | Joko | Alfian | Bayu | Faiz |
-|   |  | Victor (intern) |  |  |
-|  **Back-End** | Yanuar | Olin | Andi |  |
-|   | Fajar | Ken |  |  |
-|  **QA** | Nisa | Pram | Okky | Pram |
-|  **Support FE** | Rudi, Lyle
-|  **Support BE** | Heryno, Gigih
-|  **Support Server** | Helmy, Gizipp
-
-
 | Project Managers/Managers  | SPOTZER Staff              |   Department |
 | ------------- | ------------- |----- |
 | marc@softwareseni.com | andipurnama@softwareseni.com  | Back End Developer |
@@ -719,6 +705,8 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 |                         | pram@softwareseni.com | Quality Assurance |
 |                         | okky@softwareseni.com | Quality Assurance |
 |                         | nisa@softwareseni.com | Quality Assurance |
+
+
 
 **B. Understand the workflow in SPOTZER Team**
 
