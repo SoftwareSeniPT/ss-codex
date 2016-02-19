@@ -38,9 +38,12 @@ var app = {
   }, {
     name: 'Ruby',
     file: 'ruby.md'
-  }, {
+  },  {
     name: 'Project Spotzer',
     file: 'project-spotzer.md'
+  }, {
+    name: 'FlexiPeople',
+    file: 'flexipeople.md'
   }, {
     name: 'Contribute',
     link: 'https://github.com/SoftwareSeniPT/ss-codex'
