@@ -1214,4 +1214,5 @@ background-image: url('/images/note.png');
 
 .attention {
 color: red;
+font-style: italic;
 }
