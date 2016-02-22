@@ -14,8 +14,7 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 * To open a ticket, simply click on the subject of the ticket.
 * After the ticket is open the steps will be…
 
-
-
+<img src="/images/FPW-process.png">
 
 Click the ASSIGN drop down menu to assign the ticket 
 
