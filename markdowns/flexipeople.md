@@ -35,7 +35,7 @@ In order to create a new note, the steps are as follow:
 3. Then, write down the kind of information that you want to inform or convey to the agent(s).
 4. After the note is written, click on the <span class="blue">Add Personal Note</span> and a new note will appear.
 
-<div class="note">Special Note:
+<div class="note">**Special Note:**
 * Once the ticket is replied, the agents will further on reply to the client. Although, at times one agent will sometimes ask the admin/another agent to reply an email on their behalf.
 * Please keep in mind that incoming tickets need to be replied AS SOON AS POSSIBLE. This fast response is necessary in order to notify the client whether the ticket is already being handled or not.
 * At times you may also need to close some tickets that are available in the Workspace. Usually after the ticket is being resolved, the PM will send an email saying that the ticket is already resolved and will put the status into “Waiting on Spotzer” or “In Production.” If the client replies this and saying their thanks, you can directly close the ticket. If not, then please consult with the SDM or the PMs for further information.
