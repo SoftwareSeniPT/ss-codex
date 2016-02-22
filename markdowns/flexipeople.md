@@ -15,17 +15,19 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 * After the ticket is open the steps will be…
 <img src="/images/FPW-process.png">
 
-1. Click the ASSIGN drop down menu to assign the ticket 
-<img src="/images/FPW-Assign.png">
-  A. Click the <span classe="red">Agent</span> drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department instead. Or if unsure, consult with your SDM and/or the PMs.
+1. Click the ASSIGN drop down menu to assign the ticket
 
-  B. Select <span class="red">Department</span> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
+<img src="/images/FPW-Assign.png">
+
+  a. Click the <span classe="red">Agent</span> drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department instead. Or if unsure, consult with your SDM and/or the PMs.
+
+  b. Select <span class="red">Department</span> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
   
-  C. The <span class="red">Task Type</span> drop-down and then choose the kind of task the ticket is about.
+  c. The <span class="red">Task Type</span> drop-down and then choose the kind of task the ticket is about.
   
-  D. If you know the priority of the ticket, you can click on to the <span class="red">Priority</span> menu and choose its priority number—no. 1 is URGENT & no. 10 is LOW PRIORITY. Otherwise, just leave it be.
+  d. If you know the priority of the ticket, you can click on to the <span class="red">Priority</span> menu and choose its priority number—no. 1 is URGENT & no. 10 is LOW PRIORITY. Otherwise, just leave it be.
   
-  E. Now, to set the “Status” of the ticket, click on the drop-down and choose.
+  e. Now, to set the “Status” of the ticket, click on the drop-down and choose.
   
 2. Click the <span class="blue">ADD PROJECT LABEL</span>, and type in the name (usually for Spotzer EU) and/or the abbreviation (mostly for Spotzer AU) of the project.
 3. Click the <span class="blue">REPLY</span> button. If the ticket has CCs and BCCs, choose REPLY ALL instead
