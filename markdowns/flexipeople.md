@@ -18,7 +18,7 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 1. Click the ASSIGN drop down menu to assign the ticket 
 <img src="/images/FWP-assign.png>
   A. Click the <div classe="red">Agent</div> drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department (Heryno) instead. Or if unsure, consult with the SDM (Marc) and/or the PMs.
-  B. Select <div class="red">Department</div> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
+  B. Select <span class="red">Department</span> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
   C. The <div class="red">Task Type</div> drop-down and then choose the kind of task the ticket is about.
   D. If you know the priority of the ticket, you can click on to the <div class="red">Priority</div> menu and choose its priority number—no. 1 is URGENT & no. 10 is LOW PRIORITY. Otherwise, just leave it be.
   E. Now, to set the “Status” of the ticket, click on the drop-down and choose.
