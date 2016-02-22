@@ -10,21 +10,20 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 ### Replying to New Tickets
 * A new ticket when entering the FlexiPeople Workspace will appear in bold letters, and the sender will be colored blue.
 <img src="/images/FPW-inbox.png">
-* This new ticket should be replied ASAP. <div class="attention">Don't let a ticket hang in too long unattended.</div>
+* This new ticket should be replied ASAP. <div class="red">Don't let a ticket hang in too long unattended.</div>
 * To open a ticket, simply click on the subject of the ticket.
 * After the ticket is open the steps will be…
-
 <img src="/images/FPW-process.png">
 
-Click the ASSIGN drop down menu to assign the ticket 
-
-Click the Agent drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department (Heryno) instead. Or if unsure, consult with the SDM (Marc) and/or the PMs.
-Select Department drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
-the Task Type drop-down and then choose the kind of task the ticket is about.
-If you know the priority of the ticket, you can click on to the Priority menu and choose its priority number—no. 1 is URGENT & no. 10 is LOW PRIORITY. Otherwise, just leave it be.
-Now, to set the “Status” of the ticket, click on the drop-down and choose.
-Click the ADD PROJECT LABEL, and type in the name (usually for Spotzer EU) and/or the abbreviation (mostly for Spotzer AU) of the project.
-Click the REPLY button. If the ticket has CCs and BCCs, choose REPLY ALL instead
+1. Click the ASSIGN drop down menu to assign the ticket 
+<img src="/images/FWP-assign.png>
+  A. Click the <div classe="red">Agent</div> drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department (Heryno) instead. Or if unsure, consult with the SDM (Marc) and/or the PMs.
+  B. Select <div class="red">Department</div> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
+  C. The <div class="red">Task Type</div> drop-down and then choose the kind of task the ticket is about.
+  D. If you know the priority of the ticket, you can click on to the <div class="red">Priority</div> menu and choose its priority number—no. 1 is URGENT & no. 10 is LOW PRIORITY. Otherwise, just leave it be.
+  E. Now, to set the “Status” of the ticket, click on the drop-down and choose.
+2. Click the <div class="blue">ADD PROJECT LABEL</div>, and type in the name (usually for Spotzer EU) and/or the abbreviation (mostly for Spotzer AU) of the project.
+3. Click the <div class="blue">REPLY</div> button. If the ticket has CCs and BCCs, choose REPLY ALL instead
 
 Adding a personal note to tickets
 After the ticket is replied and assigned to an agent, a personal note may be added. This personal note is for internal use only. Client will not be able to see this. 
