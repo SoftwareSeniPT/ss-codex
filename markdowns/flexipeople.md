@@ -33,7 +33,7 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 3. Click the <span class="blue">REPLY</span> button. If the ticket has CCs and BCCs, choose REPLY ALL instead
 
 ### Adding a personal note to tickets
-After the ticket is replied and assigned to an agent, a personal note may be added. <div class="note">This personal note is for internal use only. Client will not be able to see this. </div>
+After the ticket is replied and assigned to an agent, a personal note may be added. <div class="warning">This personal note is for internal use only. Client will not be able to see this. </div>
 In order to create a new note, the steps are as follow:
 <img src="/images/FPW-Note.png">
 
