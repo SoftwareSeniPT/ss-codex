@@ -16,7 +16,7 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 <img src="/images/FPW-process.png">
 
 1. Click the ASSIGN drop down menu to assign the ticket 
-<img src="/images/FWP-assign.png>
+<img src="/images/FWP-Assign.png>
   A. Click the <span classe="red">Agent</span> drop-down, and choose the name of the agent that you want to assign the ticket to. For incoming Feedback, assign the tickets to the PMs (Adryn or Gamma). But if the ticket is a quote request or if it is about a bug in the system, send it to the tech department instead. Or if unsure, consult with your SDM and/or the PMs.
   B. Select <span class="red">Department</span> drop-down and choose from where the ticket is from, i.e. Spotzer AU, Spotzer EU, Server Support, etc.
   C. The <span class="red">Task Type</span> drop-down and then choose the kind of task the ticket is about.
