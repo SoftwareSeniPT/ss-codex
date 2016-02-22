@@ -1212,7 +1212,9 @@ background-color: #BDE5F8;
 background-image: url('/images/note.png');
 }
 
-.attention {
+.red {
 color: red;
-font-style: italic;
+}
+.blue {
+color: blue;
 }
