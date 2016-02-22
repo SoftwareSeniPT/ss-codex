@@ -1,7 +1,7 @@
 # FlexiPeople
 
 ## What To Do When Ticket Enters
-<img src="/images/FlexiPeople.png">
+<img src="/images/FlexiPeople-Workspace.png">
 
 (The Admin/Agent Ultimate Guide)
 
