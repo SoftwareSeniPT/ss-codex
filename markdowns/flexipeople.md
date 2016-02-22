@@ -28,7 +28,7 @@ As an Admin and/or Agent for the Clients of SoftwareSeni, you are obliged to res
 ### Adding a personal note to tickets
 After the ticket is replied and assigned to an agent, a personal note may be added. <div class="note">This personal note is for internal use only. Client will not be able to see this. </div>
 In order to create a new note, the steps are as follow:
-<img src="/images/FPW-note.png">
+<img src="/images/FPW-Note.png">
 
 1. First of all, click on the <span class="blue">Add Internal Note</span> option at the bottom right of the ticket, then a form will appear at the top, right under the Add Project Label option.
 2. Next, click on the <span class="blue">Add Agents</span> menu and choose the name of the agent—it is usually the agents that the ticket is assigned to, otherwise ask the SDM or the PMs for this.
