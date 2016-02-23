@@ -692,19 +692,11 @@ Welcome to Spotzer Quality Assurance Team.
 
 First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you are confusing about something, you can ask via Gtalk or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Gtalk which you can add from time to time. Here is the list :
 
-| Project Managers/Managers  | SPOTZER Staff              |   Department |
-| ------------- | ------------- |----- |
-| marc@softwareseni.com | andipurnama@softwareseni.com  | Back End Developer |
-| heryno@softwareseni.com | yanuar@softwareseni.com | Back End Developer |
-| gamma@softwareseni.com | olin@softwareseni.com | Back End Developer |
-| adryn@softwareseni.com | lyle@softwareseni.com | Front End Developer |
-|  | bayus@softwareseni.com | Front End Developer |
-|                         | faiz@softwareseni.com | Front End Developer |
-|                         | alfian@softwareseni.com | Front End Developer |
-|                         | lippo@softwareseni.com | Front End Developer |
-|                         | pram@softwareseni.com | Quality Assurance Lead|
-|                         | okky@softwareseni.com | Quality Assurance |
-|                         | nisa@softwareseni.com | Quality Assurance |
+|  **QA Lead** | **QA Staff** |
+|  :------: | :------: |
+|  Pram | Nisa, Okky |
+|  pram@softwareseni.com | nisa@softwareseni.com |
+|   | okky@softwareseni.com |
 
 <img src="/images/Spotzer-Team.png">
 
