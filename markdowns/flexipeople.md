@@ -48,3 +48,11 @@ In order to create a new note, the steps are as follow:
 * At times you may also need to close some tickets that are available in the Workspace. Usually after the ticket is being resolved, the PM will send an email saying that the ticket is already resolved and will put the status into “Waiting on Spotzer” or “In Production.” If the client replies this and saying their thanks, you can directly close the ticket. If not, then please consult with the SDM or the PMs for further information.
 * Every Monday and Friday, coordinate with the PMs about the remaining open tickets. If there are tickets that have been resolved but it is not yet closed, please close it.
 * **Always coordinate with the PMs and/or the tech dept. before assigning and closing tickets.**
+
+### Closing a ticket
+You have many reason to close a ticket.
+* When a new build is done on the Admin Work and Setup. you close it by putting the Status "In Production (Closed)". You will then re-open it later, for when the Link is ready to deliver.
+* Not all Client use the same Status system, but you should try to keep the Inbox clean as much as possible. to add a Closing Status in the Organisation, ask an Admin, or SDM.
+* The easiest way to close a ticket is...
+
+<img src="/images/FPW-Close2.png">
