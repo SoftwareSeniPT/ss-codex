@@ -688,9 +688,9 @@ Password: agentpoint
 
 Welcome to Spotzer Quality Assurance Team. 
 
-### **A. Add PMs, Managers, and team to your Gtalk list.**
+### **A. Join #SoftwareSeni channel on Slack.**
 
-First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you are confusing about something, you can ask via Gtalk or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Gtalk which you can add from time to time. Here is the list :
+First thing to do is, to make sure you already installed, and joined #SoftwareSeni Channel on Slack, and ask your leader to add you to the team you are assigned to. So, if you are confused about something, you can ask via Slack or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Slack which you can add from time to time. Here is the list :
 
 |  **QA Lead** | **QA Staff** |
 |  :------: | :------: |
