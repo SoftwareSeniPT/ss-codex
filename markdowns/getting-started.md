@@ -45,3 +45,4 @@ Depending of the department or project you are assigned too, make sur eto ask yo
 ## Change Log
 - November 4th, 2015 - Updated documentation for frontend (Rudi W.)
 - October 30th, 2015 - Added documentation for quality assurance (Ganis A.)
+- February 23rd, 2016 - Added Human Resources, Quality Assurance for Spotzer, Project Spotzer, FlexiPeople (Marc)
