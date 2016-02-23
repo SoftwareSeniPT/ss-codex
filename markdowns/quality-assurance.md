@@ -688,7 +688,7 @@ Password: agentpoint
 
 Welcome to Spotzer Quality Assurance Team. 
 
-### **A. Join #SoftwareSeni channel on Slack.**
+### **Join #SoftwareSeni channel on Slack.**
 
 First thing to do is, to make sure you already installed, and joined #SoftwareSeni Channel on Slack, and ask your leader to add you to the team you are assigned to. So, if you are confused about something, you can ask via Slack or directly to the person. And also, you can find out more contact list in http://hub.softwareseni.co.id/ or via Slack which you can add from time to time. Here is the list :
 
@@ -700,7 +700,7 @@ First thing to do is, to make sure you already installed, and joined #SoftwareSe
 
 <img src="/images/Spotzer-Team.png">
 
-### **B. Understand the workflow in SPOTZER Team**
+### **Understand the workflow in SPOTZER Team**
 
 Since we are creating new website for new clients, so all initial request should come from PM first. 
 
@@ -715,7 +715,7 @@ Since we are creating new website for new clients, so all initial request should
 7. This cycle will occur until PM stated that the site is ready to launch.
 
 
-### **C. Understand The Bug Tracking System**
+### **Understand The Bug Tracking System**
 
 1. Register to phabicator : http://projects.softwareseni.com/ 
 2. After registering, ask your manager to give access to the project.
@@ -723,14 +723,14 @@ Since we are creating new website for new clients, so all initial request should
 4. For checking your ticket: http://projects.softwareseni.com/maniphest/
  
 
-### **D. Note For Testing Process**
+### **Note For Testing Process**
 
 1. Take a look at the Project Docs first and understand what client want.
 2. Also check the Mockups design.
 3. While testing, do not forget to fill and update the Checklist.
 4. If there are something unclear about the project or anything, ask PM or anyone.
 
-### **E. Quality Assurance Role**
+### **Quality Assurance Role**
 
 Of course the **main task for QA staff is to assure quality standard as requested by client based on tickets and documentation.** 
 In other word, QA staff should make sure the works from developers are done exactly as requested by clients to meet the expected delivery date.
@@ -748,7 +748,7 @@ On daily basis, some things need to be checked on are:
 + Give solution to Developers and Project Managers if any requests unable to complete exactly as requested by clients
 + Documenting any new issues with new testing method if any to QA shared document.
 
-### **F. Quality Assurance Checklist**
+### **Quality Assurance Checklist**
 
 A checklist is needed to reduce failure by compensating for potential limits of our memory and attention. And also, it helps us to ensure consistency and completeness in carrying out a task.
 
