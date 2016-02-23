@@ -15,6 +15,7 @@ SS Codex is an open project for SS, meaning you can directly impact its evolutio
 As a newly joined employee in SoftwareSeni, you will need to perform several tasks. Communication apps, e-mail, project management tools, and many more. Below is a list of things you should do on your first day in SS. 
 
 ### Seat
+Depending where you will be assign, HR should provide you the proper place for you to excel your skills. If you are an Intern, you might have to travel around the office during your stay, as you explore many facade of the company.
 
 ### E-mail
 SoftwareSeni uses a very commun e-mail server. The GMail for Business. HR should have assigned that to you already, if not, see with them ASAP. If already, you can always prepare your e-mail signature.
@@ -25,8 +26,11 @@ We use many types of communication in SoftwareSeni. Depending on what you are wo
 2. Slack : You can ask your Lead to invite you, or you can always go ahead, and do it yourself. you can look <a href="https://slack.com/downloads" target="_blank">here</a> to download on your platform/OS. And Join our main room #softwareseni.
 
 ### Project Management Tools
+[FlexiPeople]
+[Phabricator]
 
 ### Google Drive access (If needed)
+Depending of the department or project you are assigned too, make sur eto ask your Project Manager, or Lead to include you to the Project Drive.
 
 ### more to come
 
