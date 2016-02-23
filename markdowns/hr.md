@@ -1,9 +1,11 @@
 # Human Resources
+Human Resources, the department that is there for you.
 
-### Who?
-Ulin & Gita
+## Who?
+* Ulin - HR Manager
+* Gita - HR officer & General Affairs
 
-### Dailies
+## Dailies
 * Monday - Free Lunch
 * Tuesday - 10AM Snack
 * wednesday - 10AM Snack / 3PM Snack
