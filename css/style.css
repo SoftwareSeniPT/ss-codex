@@ -1177,7 +1177,7 @@ pre .regexp {
     opacity: 0.99;
 }
 
-.info, .success, .warning, .error, .note, ul.square {
+.info, .success, .warning, .error, .note, ul.note, li.note {
 border: 1px solid;
 border-radius: 10px;
 border-color: #95c2c1;
@@ -1187,7 +1187,6 @@ background-repeat: no-repeat;
 /* background-position: 10px center; */
 background-position: 1px 1px;
 background-size: 50px;
-list-style-type: square;
 }
 .info {
 color: #00529B;
