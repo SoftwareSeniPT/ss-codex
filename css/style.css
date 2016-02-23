@@ -1187,6 +1187,7 @@ background-repeat: no-repeat;
 /* background-position: 10px center; */
 background-position: 1px 1px;
 background-size: 50px;
+ul.square {list-style-type: square;
 }
 .info {
 color: #00529B;
