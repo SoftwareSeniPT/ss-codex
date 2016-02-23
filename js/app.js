@@ -18,6 +18,9 @@ var app = {
     name: 'Getting Started',
     file: 'getting-started.md'
   }, {
+    name: 'Human Resources',
+    file: 'hr.md'
+  }, {
     name: 'Frontend Dev',
     file: 'frontend.md'
   }, {
