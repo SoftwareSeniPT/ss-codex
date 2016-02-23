@@ -1177,7 +1177,7 @@ pre .regexp {
     opacity: 0.99;
 }
 
-.info, .success, .warning, .error, .note, ul.note, li.note {
+.info, .success, .warning, .error, .note {
 border: 1px solid;
 border-radius: 10px;
 border-color: #95c2c1;
