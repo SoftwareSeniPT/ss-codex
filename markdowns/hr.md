@@ -1,6 +1,6 @@
 # Human Resources
 
-## Who?
+### Who?
 Ulin & Gita
 
 ### Dailies
