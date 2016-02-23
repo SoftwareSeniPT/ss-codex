@@ -44,9 +44,13 @@ In order to create a new note, the steps are as follow:
 
 <div class="note">**Special Note:**
 * Once the ticket is replied, the agents will further on reply to the client. Although, at times one agent will sometimes ask the admin/another agent to reply an email on their behalf.
+*
 * Please keep in mind that incoming tickets need to be replied AS SOON AS POSSIBLE. This fast response is necessary in order to notify the client whether the ticket is already being handled or not.
+
 * At times you may also need to close some tickets that are available in the Workspace. Usually after the ticket is being resolved, the PM will send an email saying that the ticket is already resolved and will put the status into “Waiting on Spotzer” or “In Production.” If the client replies this and saying their thanks, you can directly close the ticket. If not, then please consult with the SDM or the PMs for further information.
+
 * Every Monday and Friday, coordinate with the PMs about the remaining open tickets. If there are tickets that have been resolved but it is not yet closed, please close it.
+
 * **Always coordinate with the PMs and/or the tech dept. before assigning and closing tickets.**
 </div>
 
