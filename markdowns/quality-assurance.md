@@ -702,11 +702,11 @@ First thing to do is, add PMs, Managers, and team to your Gtalk list. So, if you
 |                         | faiz@softwareseni.com | Front End Developer |
 |                         | alfian@softwareseni.com | Front End Developer |
 |                         | lippo@softwareseni.com | Front End Developer |
-|                         | pram@softwareseni.com | Quality Assurance |
+|                         | pram@softwareseni.com | Quality Assurance Lead|
 |                         | okky@softwareseni.com | Quality Assurance |
 |                         | nisa@softwareseni.com | Quality Assurance |
 
-
+<img src="/images/Spotzer-Team.png">
 
 ### **B. Understand the workflow in SPOTZER Team**
 
