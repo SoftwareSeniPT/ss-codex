@@ -1,85 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Software Seni Codex</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/fontello.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/mobile.css">
-    <link rel="icon" href="./favicon.png" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0," />
+<html>
+  <head>
+    <title>SS Codex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,300' rel='stylesheet' type='text/css'>
-</head>
+    <link href="https://file.myfontastic.com/Xgb6P7uES8NjZFwfVmuabD/icons.css" rel="stylesheet">    
+    <link href="./build/app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="main">Loading...</div>
+    <!-- 
+    *
+    * Remove comment if in development environment
+    *
+    * -->
+    <!-- <script src="/assets/vendors.js"></script> -->
+    <!-- <script src="/assets/app.js"></script> -->
 
-<body class="styleguide animate-title">
-    <section id="content">
-        <div class="outer">
-            <!-- Logo -->
-            <a href="/" class="logo move-left"><img src="./images/logo.png"></a>
-            <div class="topic nano move-left">
-                <div class="nano-content">
-                    <!-- the beginning of side menu template -->
-                    <div data-template="side-menu">
-                        <h3 class="category-title">{{ category }}</h3>
-                        <ul class="side-menu" data-template="side-menu-title">
-                            <li><span data-id="{{ id }}" data-item-select>{{ title }}</span>
-                                <ul data-template="side-menu-children">
-                                    <li data-id="{{ id }}" data-item-select>{{ title }}
-                                        <a href="#" class="check test-component" data-id="{{ id }}" data-check-link><img src="./images/icon-check-circle.svg" class="svg"></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- the ending of side menu template -->
-                </div>
-            </div>
-            <div id="hamburger" class="move-right"><img src="./images/icon-hamburger.svg" class="svg"></div>
-            <div id="search-form" class="move-right">
-                <form>
-                    <input class="search-input" placeholder="Enter your search term..." type="text" id="search" data-search-input>
-                </form>
-            </div>
-            <!-- the beginning of content template -->
-            <div class="desc move-right" data-template="content" data-content-wrapper>
-                <div class="hero">
-                    <h1>Software Seni Codex</h1>
-                    <!-- <a id="learn-more" href="#learn-more"><img src="./images/arrow.png"> Learn More</a> -->
-                </div>
-                <div class="title">
-                    <h2>{{ title }}</h2>
-                    <!-- <a href="#" class="check test-component {{ class }}" data-id="{{ id }}" data-check-link><img src="./images/icon-check-circle.svg" class="svg"></a> -->
-                </div>
-                <div class="text">{{ content }}</div>
-            </div>
-            <!-- the ending of content template -->
-            <!-- the beginning of search template -->
-            <div class="search move-right" data-search-wrapper>
-                <h2>Searching <span data-search-value>...</span></h2>
-                <div data-template="search-result" search-result>
-                    <h4 data-item-select data-id="{{ id }}">{{ title }}</h4>
-                    <div class="description">{{ description }}</div>
-                </div>
-            </div>
-            <!-- the ending of search template -->
-        </div>
-    </section>
-    <footer>
-        
-    </footer>
-    <div id="loader" class="pageload-overlay opening" data-opening="M 40 -21.875 C 11.356078 -21.875 -11.875 1.3560784 -11.875 30 C -11.875 58.643922 11.356078 81.875 40 81.875 C 68.643922 81.875 91.875 58.643922 91.875 30 C 91.875 1.3560784 68.643922 -21.875 40 -21.875 Z">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="xMidYMid slice">
-            <path d="M40,30 c 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 0,0 Z" />
-        </svg>
-    </div>
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/rainbow-custom.min.js"></script>
-    <script type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
-    <script type="text/javascript" src="js/marked.min.js"></script>
-    <script type="text/javascript" src="js/svg.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-</body>
-
+    <!-- 
+    *
+    * Remove comment if in production environment
+    *
+    * -->
+    <script src="./build/vendors.js"></script>
+    <script src="./build/app.js"></script>
+  </body>
 </html>

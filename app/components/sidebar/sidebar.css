@@ -1,0 +1,126 @@
+.logo {
+    padding: 14px 30px;
+    padding-bottom: 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background: #fff;
+    z-index: 100;
+    border-bottom: 1px solid #CBDEDC;
+}
+
+.mainCategory {
+    position: relative;
+}
+
+.mainCategory:after {
+    position: absolute;
+    bottom: -1px;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background-color: #CBDEDC;
+    content: "";
+}
+
+.mainCategoryTitle {
+    font-size: 17px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 18px 30px;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mainCategoryTitle:after {
+    font-family: "ss-codex";
+    content: 'a';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    font-size: 10px;
+    margin-top: -13px;
+    padding: 10px;
+    color: #95C2C1;
+}
+
+.opened .mainCategoryTitle:after {
+    content: "b";
+}
+
+.mainCategory ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mainCategory li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.mainCategory li > span,
+.mainCategory li > a {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding-right: 15px;
+}
+
+.mainCategory li > span:after {
+    font-family: ss-codex;
+    content: "d";
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    color: #95c2c1;
+    line-height: 2.3;
+}
+
+.mainCategory li > .parentLabelOpened:after {
+    content: "e";
+}
+
+.currentPage a {
+    font-weight: bold;
+    color: #333;
+}
+
+.mainCategory ul ul {
+    padding-left: 20px;
+}
+
+.mainCategory > .listWrapper > ul {
+    padding: 0 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+.listWrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.parentLabel {
+    display: inline-block;
+}
+
+
+/* Open, close */
+
+.mainCategory.opened {
+    background: #F2FAFA;
+}
+
+.closed > ul {
+    display: none;
+}
+
+.currentPage {}

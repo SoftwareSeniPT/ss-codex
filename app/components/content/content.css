@@ -1,0 +1,97 @@
+.content {
+    color: rgb(66, 88, 100);
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.title {
+    font-size: 45px;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #13A99E;
+}
+
+.title a {
+    color: #13A99E;
+}
+
+.item,
+.title {
+    padding: 0 40px;
+    max-width: 900px;
+    margin: 20px 0;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.searchItem {
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 10px;
+}
+
+.searchItem .title {
+    font-size: 30px;
+}
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    min-height: 400px;
+    background-position: bottom;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 80px;
+    font-weight: 200;
+    line-height: 1;
+    max-width: 650px;
+    padding: 40px;
+}
+
+.searchNotFound {
+    padding: 30px;
+    text-align: center;
+}
+
+.content pre {
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+    padding: 6px 10px;
+    line-height: 19px;
+    margin-bottom: 20px;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    color: #333;
+    background: #f8f8f8;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.content img {
+    margin: 15px 0;
+    max-width: 70%;
+}
+
+@media (max-width: 480px) {
+    .content img {
+        max-width: 100%;
+    }
+    .title {
+        font-size: 35px;
+    }
+    .hero {
+        min-height: 230px;
+    }
+    .hero h1 {
+        font-size: 50px;
+    }
+}

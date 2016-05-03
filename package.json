@@ -1,0 +1,49 @@
+{
+  "name": "fleen",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack",
+    "watch": "webpack -w",
+    "test": "karma start karma.conf.js",
+    "test-debug": "karma start karma.conf.js --single-run=false --debug --auto-watch",
+    "test-browser": "karma start karma.conf.js --browsers=Chrome",
+    "test-browser-debug": "karma start karma.conf.js --browsers=Chrome --single-run=false --debug --auto-watch"
+  },
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "isomorphic-fetch": "^2.2.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-cli": "^0.1.2",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "node-libs-browser": "^1.0.0",
+    "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.4",
+    "react-addons-test-utils": "^0.14.7",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "^2.0.0",
+    "redux-thunk": "^2.0.1",
+    "simple-scrollbar": "diruuu/simple-scrollbar",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.1",
+    "tslint-loader": "^2.1.1",
+    "typescript": "^1.8.7",
+    "webpack": "^1.13.0",
+    "webpack-config": "^4.0.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

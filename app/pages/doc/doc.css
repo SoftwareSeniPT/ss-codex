@@ -1,0 +1,181 @@
+.doc {
+    padding-left: 250px;
+    padding-top: 60px;
+}
+
+.sidebar {
+    float: left;
+    width: 250px;
+    min-height: 1px;
+    background-color: #fff;
+    padding: 0;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 60px;
+}
+
+/* Modal */
+
+.modal {
+    background-color: black;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.modalShow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalIcon {
+    font-size: 80px;
+    color: #c9dae1;
+}
+
+.modalOuter {
+    background-color: white;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: 478px;
+    padding: 17px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 99999;
+}
+
+.modalTitle {
+    color: #575757;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    margin: 5px 0;
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 40px;
+    display: block;
+}
+
+.modalDescription {
+    color: #797979;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    text-align: inherit;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+.modalInput {}
+
+.modalInput input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #d7d7d7;
+    height: 43px;
+    margin-top: 30px;
+    margin-bottom: 17px;
+    font-size: 18px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.06);
+    padding: 0 12px;
+    transition: all 0.3s;
+}
+
+.modalInput input:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px #c4e6f5;
+    border: 1px solid #b4dbed;
+}
+
+.modalButton {}
+
+.modalButton button {
+    background-color: #8CD4F5;
+    color: white;
+    border: none;
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 10px 32px;
+    margin: 26px 5px 0 5px;
+    cursor: pointer;
+}
+
+.modalButton .modalCancelButton {
+    background-color: #b9b9b9;
+}
+
+.modalButton .modalEnter {}
+
+
+/* Mobile media query */
+
+@media (max-width: 480px) {
+    .doc {
+        padding: 0;
+        padding-top: 60px;
+    }
+    .content {
+        transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        transition: transform 0.4s, -webkit-transform 0.4s;
+    }
+    .contentPushRight {
+        -webkit-transform: translateX(250px);
+        transform: translateX(250px);
+    }
+    .sidebar {
+        padding-top: 60px;
+        transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        transition: transform 0.4s, -webkit-transform 0.4s;
+        -webkit-transform: translateX(-250px);
+        transform: translateX(-250px);
+    }
+    .sideBarActive {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    .hamburger {
+        display: block;
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        padding: 21px 20px;
+        background: #21d2cc;
+    }
+}

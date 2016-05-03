@@ -1,0 +1,106 @@
+/* Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 56px;
+    height: 26px;
+    padding: 3px;
+    margin: 5px 0px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #eeeeee, white 25px);
+}
+
+.switchInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.switchLabel {
+    position: relative;
+    display: block;
+    height: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #eceeef;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+    transition: 0.15s ease-out;
+    transition-property: opacity background;
+}
+
+.switchLabel:before,
+.switchLabel:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    transition: inherit;
+}
+
+.switchLabel:before {
+    content: attr(data-off);
+    right: 11px;
+    color: #aaa;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.switchLabel:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.switchInput:checked ~ .switchLabel {
+    background: #47a8d8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.switchInput:checked ~ .switchLabel:before {
+    opacity: 0;
+}
+
+.switchInput:checked ~ .switchLabel:after {
+    opacity: 1;
+}
+
+.switchHandle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to bottom, white 40%, #f0f0f0);
+    transition: all 0.15s ease-out;
+}
+
+.switchHandle:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    background-image: linear-gradient(to bottom, #eeeeee, white);
+}
+
+.switchInput:checked ~ .switchHandle {
+    left: 100%;
+    margin-left: -22px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}

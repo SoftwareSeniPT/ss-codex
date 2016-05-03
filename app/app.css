@@ -1,0 +1,85 @@
+/*
+ * Globals
+ */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+:global(#main) {
+    overflow: auto;
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    background: #eaf4f3;
+    color: #525252;
+    margin: 0;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: normal;
+}
+
+::-moz-selection {
+    color: #ebebe3;
+    background: #222;
+}
+
+::selection {
+    color: #ebebe3;
+    background: #222;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+i {
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+/*
+ * Links
+ */
+
+a {
+    color: #506A85;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    color: #506A85;
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+
+/* Local */
+
+.app {}
