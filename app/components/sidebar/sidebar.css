@@ -1,5 +1,5 @@
 .logo {
-    padding: 14px 30px;
+    padding: 15px 30px;
     padding-bottom: 13px;
     position: fixed;
     top: 0;
@@ -8,6 +8,10 @@
     background: #fff;
     z-index: 100;
     border-bottom: 1px solid #CBDEDC;
+}
+
+.logo svg {
+  vertical-align: top;
 }
 
 .mainCategory {
