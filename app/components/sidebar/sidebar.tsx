@@ -14,11 +14,9 @@ import {Logo} from "../../components/logo/logo";
 import {getCategories, toogleOpenCategory} from "./sidebar.act";
 import {immutable} from "../../services/immutable/immutable";
 import {moveArrayItem} from "../../services/array/move";
-
-// Link
 import {Link} from "react-router";
-
 import {includes} from "../../services/array/index";
+import {decodeEntities} from "../../services/string/decodeEntities";
 
 /*
  * Import --------------------
@@ -108,7 +106,7 @@ export class Sidebar extends React.Component<any, any> {
           <div className={style.logo}>
             <Logo />
           </div>
-          <div 
+          <div
             className={style.categories}>
             {status === "COMPLETE" && categories.length ? categories.map((category, key) => {
               const {name, slug, ID, opened, posts = [], children = []} = category;
@@ -117,12 +115,12 @@ export class Sidebar extends React.Component<any, any> {
               }
               return (
                 <div className={`${style.mainCategory} ${opened ? style.opened : style.closed}`} key={key}>
-                  <h3 
+                  <h3
                     className={style.mainCategoryTitle}
                     onClick={(e) => opened ? this.toogleOpenCategory(ID, false) : this.toogleOpenCategory(ID, true) }>
-                    {name}
+                    {decodeEntities(name)}
                   </h3>
-                  <div 
+                  <div
                     className={style.listWrapper}
                     style={opened ? { maxHeight: "100%" } : { maxHeight: 0 }}>
                     <ul>
@@ -130,7 +128,7 @@ export class Sidebar extends React.Component<any, any> {
                         const {title, slug} = post;
                         return (
                           <li className={slug === currentSlug ? style.currentPage : ""} key={key}>
-                            <Link to={`/doc/${slug}`}>{title}</Link>
+                            <Link to={`/doc/${slug}`}>{decodeEntities(title)}</Link>
                           </li>
                         );
                       })}
@@ -139,11 +137,13 @@ export class Sidebar extends React.Component<any, any> {
                         const {name, ID, opened, posts = []} = post;
                         return (
                           <li key={key} className={opened ? style.opened : style.closed}>
-                            <span 
+                            <span
                               className={`${style.parentLabel} ${opened ? style.parentLabelOpened : ""}`}
-                              onClick={() => opened ? this.toogleOpenCategory(ID, false) : 
-                              this.toogleOpenCategory(ID, true)}>{name}</span>
-                            {posts.length ? 
+                              onClick={() => opened ? this.toogleOpenCategory(ID, false) :
+                              this.toogleOpenCategory(ID, true)}>
+                              {decodeEntities(name)}
+                            </span>
+                            {posts.length ?
                               <div
                                 className={style.listWrapper}
                                 style={opened ? { maxHeight: "100%" } : { maxHeight: 0 }}>
@@ -152,7 +152,9 @@ export class Sidebar extends React.Component<any, any> {
                                     const {title, slug} = post;
                                     return (
                                       <li key={key} className={slug === currentSlug ? style.currentPage : ""}>
-                                        <Link to={`/doc/${slug}`}>{title}</Link>
+                                        <Link to={`/doc/${slug}`}>
+                                          {decodeEntities(title)}
+                                        </Link>
                                       </li>
                                     );
                                   })}

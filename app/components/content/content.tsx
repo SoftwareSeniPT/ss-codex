@@ -1,6 +1,6 @@
 /*
  * Interface
- */ 
+ */
 
 interface IContentProps {
   title: string;
@@ -21,6 +21,7 @@ const style: any = require("./content.css");
 
 // Link
 import {Link} from "react-router";
+import {decodeEntities} from "../../services/string/decodeEntities";
 
 /*
  * Import --------------------
@@ -31,14 +32,16 @@ export class Content extends React.Component<IContentProps, IContentState> {
         const {title, content, onSearchPage, searchData, className} = this.props;
         return (
             <div className={`content ${style.content} ${className}`}>
-              {onSearchPage ? 
+              {onSearchPage ?
                 <div className={style.search}>
                 {searchData.length ? searchData.map((search, key) => {
                   const {title, excerpt, slug} = search;
                   return (
                     <div className={style.searchItem} key={key}>
                       <h2 className={style.title}>
-                        <Link to={`/doc/${slug}`}>{title}</Link>
+                        <Link to={`/doc/${slug}`}>
+                          {decodeEntities(title)}
+                        </Link>
                       </h2>
                       <div className={style.item} dangerouslySetInnerHTML={{ __html: excerpt}} />
                     </div>
@@ -49,7 +52,9 @@ export class Content extends React.Component<IContentProps, IContentState> {
                 </div>
               : <div className={style.singlePost}>
                 {title === "Introduction" ? <div className={style.hero} style={{ backgroundImage: "url(./assets/home-bg.png)"}}><h1>Software Seni Codex</h1></div> : null}
-                  <h2 className={style.title}>{title}</h2>
+                  <h2 className={style.title}>
+                    {decodeEntities(title)}
+                  </h2>
                   <div className={style.item} dangerouslySetInnerHTML={{ __html: content }} />
                 </div>}
             </div>
