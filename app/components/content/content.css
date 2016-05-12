@@ -81,6 +81,28 @@
     max-width: 70%;
 }
 
+.content table {
+    background: #fff;
+    border-spacing: 0;
+    border: 1px solid #D0DEDD;
+}
+
+.content table tr:nth-of-type(odd) {
+    background: #F5FBFA;
+    border-bottom: 1px solid #D0DEDD;
+}
+
+.content table td {
+    padding: 10px 15px;
+    line-height: 1;
+    border-right: 1px solid #D0DEDD;
+}
+
+.content table tr td:last-child {
+    border: 0;
+    line-height: 1.2;
+}
+
 @media (max-width: 480px) {
     .content img {
         max-width: 100%;
