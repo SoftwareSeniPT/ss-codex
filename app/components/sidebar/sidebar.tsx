@@ -28,31 +28,7 @@ export class Sidebar extends React.Component<any, any> {
       dispatch(getCategories());
     }
 
-    categoryParser (categories = []) {
-      "use strict";
-      if (!categories.length) {
-        return;
-      }
-
-      const filteredCat = categories.filter((cat, key) => {
-        if (cat.parent === 0) {
-          return true;
-        }
-        return false;
-      });
-
-      let catWithChildren =  filteredCat.map((cat, key) => {
-        const catID = cat.ID;
-        return immutable(cat, {
-          children: categories.filter((cat, key) => {
-            if (catID === cat.parent) {
-              return true;
-            }
-            return false;
-          })
-        });
-      });
-
+    orderCategory(catArray) {
       const categoryOrder = [{
           slug: "getting-started",
           id: 0
@@ -65,20 +41,81 @@ export class Sidebar extends React.Component<any, any> {
         const slug = cat.slug;
         let id = cat.id;
         if (id === "last") {
-          id = catWithChildren.length - 1;
+          id = catArray.length - 1;
         }
         let position;
-        catWithChildren.map((cat, key) => {
+        catArray.map((cat, key) => {
           if (cat.slug === slug) {
             position = key;
           }
         });
         if (position !== undefined) {
-          catWithChildren = moveArrayItem(catWithChildren, position, id);
+          catArray = moveArrayItem(catArray, position, id);
         }
       });
+      return catArray;
+    }
 
-      return catWithChildren;
+    checkForActiveCat(catArray) {
+      // Check if category is active
+      const {currentSlug} = this.props;
+      catArray = catArray.map((cat, key) => {
+        const {posts = []} = cat;
+        let isActive = false;
+        posts.map((post, key) => {
+          const {slug} = post;
+          if (slug === currentSlug) {
+            isActive = true;
+          }
+        });
+        if (isActive) {
+          return immutable(cat, {active: true});
+        } else {
+          return cat;
+        }
+      });
+      return catArray;
+    }
+
+    categoryParser (categories = []) {
+      "use strict";
+      if (!categories.length) {
+        return;
+      }
+      categories = this.checkForActiveCat(categories);
+
+      // Grab all parent category
+      const filteredCat = categories.filter((cat, key) => {
+        if (cat.parent === 0) {
+          return true;
+        }
+        return false;
+      });
+
+      let catWithChildren =  filteredCat.map((cat, key) => {
+        const catID = cat.ID;
+        let {active = false} = cat;
+        if (!active) {
+          categories.map((cat) => {
+            if (catID === cat.parent) {
+              if (cat.active) {
+                active = true;
+              }
+            }
+          });
+        }
+        return immutable(cat, {
+          children: categories.filter((cat, key) => {
+            if (catID === cat.parent) {
+              return true;
+            }
+            return false;
+          }),
+          active: active
+        });
+      });
+
+      return this.orderCategory(catWithChildren);
     };
 
     toogleOpenCategory(categoryID, opened) {
@@ -100,7 +137,7 @@ export class Sidebar extends React.Component<any, any> {
       const {sidebarData, className, currentSlug, hiddenCategory = []} = this.props;
       const {status} = sidebarData;
       const categories = this.categoryParser(sidebarData.categories);
-
+      console.log(categories, "categories");
       return (
         <div className={`sidebar ${className}`}>
           <div className={style.logo}>
@@ -109,20 +146,22 @@ export class Sidebar extends React.Component<any, any> {
           <div
             className={style.categories}>
             {status === "COMPLETE" && categories.length ? categories.map((category, key) => {
-              const {name, slug, ID, opened, posts = [], children = []} = category;
+              const {name, slug, ID, posts = [], children = [], active = false} = category;
+              let {opened} = category;
               if (hiddenCategory.length && includes.call(hiddenCategory, slug)) {
                 return;
               }
               return (
-                <div className={`${style.mainCategory} ${opened ? style.opened : style.closed}`} key={key}>
+                <div
+                  className={`${style.mainCategory} ${opened || active ? style.opened : style.closed}`}
+                  key={key}>
                   <h3
                     className={style.mainCategoryTitle}
                     onClick={(e) => opened ? this.toogleOpenCategory(ID, false) : this.toogleOpenCategory(ID, true) }>
                     {decodeEntities(name)}
                   </h3>
                   <div
-                    className={style.listWrapper}
-                    style={opened ? { maxHeight: "100%" } : { maxHeight: 0 }}>
+                    className={style.listWrapper}>
                     <ul>
                       {posts.map((post, key) => {
                         const {title, slug} = post;
@@ -134,9 +173,9 @@ export class Sidebar extends React.Component<any, any> {
                       })}
 
                       {children.map((post, key) => {
-                        const {name, ID, opened, posts = []} = post;
+                        const {name, ID, opened, posts = [], active} = post;
                         return (
-                          <li key={key} className={opened ? style.opened : style.closed}>
+                          <li key={key} className={opened || active ? style.opened : style.closed}>
                             <span
                               className={`${style.parentLabel} ${opened ? style.parentLabelOpened : ""}`}
                               onClick={() => opened ? this.toogleOpenCategory(ID, false) :
@@ -145,8 +184,7 @@ export class Sidebar extends React.Component<any, any> {
                             </span>
                             {posts.length ?
                               <div
-                                className={style.listWrapper}
-                                style={opened ? { maxHeight: "100%" } : { maxHeight: 0 }}>
+                                className={style.listWrapper}>
                                 <ul>
                                   {posts.map((post, key) => {
                                     const {title, slug} = post;
