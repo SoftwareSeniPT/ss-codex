@@ -1,4 +1,4 @@
-export const decodeEntities = (text) => {
+export const decodeEntities = (text = "") => {
     var entities = [
         ["amp", "&"],
         ["lt", "<"],
