@@ -13,7 +13,7 @@ import {Logo} from "../../components/logo/logo";
 // Action
 import {getCategories, toogleOpenCategory} from "./sidebar.act";
 import {immutable} from "../../services/immutable/immutable";
-import {moveArrayItem} from "../../services/array/move";
+// import {moveArrayItem} from "../../services/array/move";
 import {Link} from "react-router";
 import {includes} from "../../services/array/index";
 import {decodeEntities} from "../../services/string/decodeEntities";
@@ -29,30 +29,18 @@ export class Sidebar extends React.Component<any, any> {
     }
 
     orderCategory(catArray) {
-      const categoryOrder = [{
-          slug: "getting-started",
-          id: 0
-        }, {
-          slug: "contribute",
-          id: "last"
-        }];
-
-      categoryOrder.map((cat, key) => {
-        const slug = cat.slug;
-        let id = cat.id;
-        if (id === "last") {
-          id = catArray.length - 1;
+      catArray = catArray.map((cat, key) => {
+        const desc = cat.description;
+        if (desc === undefined || desc === "") {
+          return immutable(cat, {description: 99});
         }
-        let position;
-        catArray.map((cat, key) => {
-          if (cat.slug === slug) {
-            position = key;
-          }
-        });
-        if (position !== undefined) {
-          catArray = moveArrayItem(catArray, position, id);
-        }
+        return cat;
       });
+
+      function mycomparator(a, b) {
+        return parseInt(a.description, 10) - parseInt(b.description, 10);
+      }
+      catArray.sort(mycomparator);
       return catArray;
     }
 
@@ -104,13 +92,16 @@ export class Sidebar extends React.Component<any, any> {
             }
           });
         }
+
+        let children = this.orderCategory(categories.filter((cat, key) => {
+          if (catID === cat.parent) {
+            return true;
+          }
+          return false;
+        }));
+
         return immutable(cat, {
-          children: categories.filter((cat, key) => {
-            if (catID === cat.parent) {
-              return true;
-            }
-            return false;
-          }),
+          children: children,
           active: active
         });
       });
