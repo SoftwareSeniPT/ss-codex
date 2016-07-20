@@ -128,7 +128,7 @@ export class Sidebar extends React.Component<any, any> {
       const {sidebarData, className, currentSlug, hiddenCategory = []} = this.props;
       const {status} = sidebarData;
       const categories = this.categoryParser(sidebarData.categories);
-      console.log(categories, "categories");
+      // console.log(categories, "categories");
       return (
         <div className={`sidebar ${className}`}>
           <div className={style.logo}>

@@ -39,8 +39,8 @@ export class PromptModal extends React.Component<any, {}> {
             <input type="password" placeholder="Enter Password" ref="password"/>
           </div>
           <div className={style.modalButton}>
-            <button 
-              className={style.modalCancelButton} 
+            <button
+              className={style.modalCancelButton}
               onClick={() => cancelCallback(password.value) }>Cancel</button>
             <button className={style.modalEnter} onClick={() => enterCallback(password.value) }>Submit</button>
           </div>
@@ -82,40 +82,88 @@ export class Doc extends React.Component<any, {}> {
       dispatch(getDoc(slug, password));
     }
 
+    findCatParent(cat, catLib) {
+      const filteredCat = catLib.filter((o, key) => {
+        if (o.slug === cat.slug) {
+          return true;
+        }
+        return false;
+      });
+
+      if (filteredCat !== undefined && filteredCat.length) {
+        const slug = filteredCat[0].slug;
+        const name = filteredCat[0].name;
+        const parent = filteredCat[0].parent;
+
+        if (parent === 0) {
+          return {name, slug};
+        } else {
+          const result: any = this.findCatByID(parent, catLib);
+          return {name: result.name, slug: result.slug};
+        }
+      }
+    }
+
+    findCatByID(id, catLib) {
+      const filteredCat = catLib.filter((o, key) => {
+        if (o.ID === id) {
+          return true;
+        }
+        return false;
+      });
+
+      if (filteredCat !== undefined && filteredCat.length) {
+        const slug = filteredCat[0].slug;
+        const name = filteredCat[0].name;
+        return {name, slug};
+      } else {
+        return {name: undefined, slug: undefined};
+      }
+    }
+
     render(): React.ReactElement<{}> {
-        const {docs, dispatch, params} = this.props;
+        const {docs, dispatch, params, sidebarData} = this.props;
         const {data, status, search, onSearchPage, offcanvasActive} = docs;
+        let parent;
+        if (data.categories !== undefined && data.categories !== null) {
+          const cat = data.categories[Object.keys(data.categories)[0]];
+          const catLib = sidebarData.categories;
+          parent = this.findCatParent(cat, catLib);
+          console.log(parent);
+        }
 
         return (
           <div className={`doc ${style.doc} ${offcanvasActive ? style.offcanvasActive : ""}`}>
-            <Hamburger 
-              className={style.hamburger} 
+            <Hamburger
+              className={style.hamburger}
               onClick={() => offcanvasActive ? dispatch(showOffcanvas(false)) : dispatch(showOffcanvas(true)) } />
-              <Sidebar 
+              <Sidebar
                 currentSlug={params.slug}
                 hiddenCategory={["uncategorized", "password-protected"]}
                 className={`${style.sidebar} ${offcanvasActive ? style.sideBarActive : ""}`} />
-              <SearchForm 
-                status={status} 
+              <SearchForm
+                status={status}
                 className={`${style.searchForm} ${offcanvasActive ? style.searchFormPushRight : ""}`}
                 searchDoc={(query) => dispatch(searchDoc(query)) } />
-              <Content 
+              <Content
                 className={`${style.content} ${offcanvasActive ? style.contentPushRight : ""}`}
-                title={data.title} 
+                title={data.title}
                 onSearchPage={onSearchPage}
                 searchData={search.posts}
+                parent={data.categories !== undefined && data.categories !== null ? this.findCatParent(data.categories[Object.keys(data.categories)[0]], sidebarData.categories) : null}
                 content={data.content} />
-              <PromptModal 
+              <PromptModal
                 show={status === "NEED_PASSWORD" ? true : false}
                 enterCallback={(password) => this.processPassword(password) }
                 cancelCallback={() => dispatch(hidePasswordPrompt())} />
             </div>
         );
     }
-}; 
+};
 
 export default connect(function(state: any): any {
   return {
-    docs: state.docReducer
+    docs: state.docReducer,
+    sidebarData: state.sidebarReducer
   };
 })(Doc);

@@ -32,6 +32,14 @@ function onSearchPage(status) {
   };
 }
 
+export function updateParentData(data) {
+  "use strict";
+  return {
+    type: "UPDATE_PARENT_DATA",
+    data
+  };
+}
+
 export function showOffcanvas(status) {
   "use strict";
   return {
@@ -81,7 +89,7 @@ export function getDoc(slug, password?) {
       .then((json) => {
         if (password !== undefined) {
           // If password is provided
-          
+
           // Check if password is not wrong
           fetch(`https://public-api.wordpress.com/rest/v1.2/sites/sscodex.wordpress.com`)
             .then((response) => response.json())
