@@ -32,31 +32,38 @@ export class Content extends React.Component<IContentProps, IContentState> {
     render(): React.ReactElement<{}> {
         const {title, content, onSearchPage, searchData, className, parent} = this.props;
 
-        let image = "";
+        let image;
         if (parent !== null) {
-          if (parent.slug === "frontend-dev") {
-            image = "front-end.png";
-          }
-          if (parent.slug === "backend-php") {
-            image = "php.png";
-          }
-          if (parent.slug === "project-management") {
-            image = "project-management.png";
-          }
-          if (parent.slug === "quality-assurance") {
-            image = "qa.png";
-          }
-          if (parent.slug === "backend-ruby") {
-            image = "ruby.png";
-          }
-          if (parent.slug === "backend-scala") {
-            image = "scala.png";
-          }
-          if (parent.slug === "backend-wordpress") {
-            image = "wp.png";
-          }
-          if (parent.slug === "support") {
-            image = "support.png";
+          switch (parent.slug) {
+            case "frontend-dev":
+              image = "front-end.png";
+              break;
+            case "backend-php":
+              image = "php.png";
+              break;
+            case "project-management":
+              image = "project-management.png";
+              break;
+            case "quality-assurance":
+              image = "qa.png";
+              break;
+            case "backend-ruby":
+              image = "ruby.png";
+              break;
+            case "backend-scala":
+              image = "scala.png";
+              break;
+            case "backend-wordpress":
+              image = "wp.png";
+              break;
+            case "support":
+              image = "support.png";
+              break;
+            case "graphic-design":
+              image = "graphic-design.png";
+              break;
+            default:
+              image = null;
           }
         }
 
@@ -84,7 +91,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
                   <div className={style.hero} style={{ backgroundImage: "url(./assets/home-bg.png)"}}>
                     <h1>
                       {title === "Introduction" ? "Software Seni Handbook" : (parent !== null ? parent.name : "")}
-                      {image !== "" ?
+                      {image !== null ?
                         <span className={style.titleIcon}>
                           <img src={`./assets/${image}`} />
                         </span>
