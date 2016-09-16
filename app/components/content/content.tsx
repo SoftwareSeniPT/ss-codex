@@ -32,6 +32,12 @@ export class Content extends React.Component<IContentProps, IContentState> {
     render(): React.ReactElement<{}> {
         const {title, content, onSearchPage, searchData, className, parent} = this.props;
 
+        let replacedContent;
+        // Replace shotcode on content
+        if (typeof content === "string") {
+          replacedContent = content.replace(/\{checkbox\}/g, "<input type=\"checkbox\" class=\"checkbox\"/> ");
+        }
+
         let image;
         if (parent !== null) {
           switch (parent.slug) {
@@ -102,7 +108,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
                   <h2 className={style.title}>
                     {decodeEntities(title)}
                   </h2>
-                  <div className={style.item} dangerouslySetInnerHTML={{ __html: content }} />
+                  <div className={style.item} dangerouslySetInnerHTML={{ __html: replacedContent }} />
                 </div>}
             </div>
         );
