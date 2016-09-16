@@ -79,6 +79,9 @@ a img {
     border: none;
 }
 
+.content ol li {
+    margin-bottom: 1em;
+}
 
 /* Local */
 
