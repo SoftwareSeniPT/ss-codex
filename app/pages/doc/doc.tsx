@@ -129,7 +129,6 @@ export class Doc extends React.Component<any, {}> {
           const cat = data.categories[Object.keys(data.categories)[0]];
           const catLib = sidebarData.categories;
           parent = this.findCatParent(cat, catLib);
-          console.log(parent);
         }
 
         return (

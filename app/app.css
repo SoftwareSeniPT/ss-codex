@@ -9,8 +9,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
-html,
-body {
+html, body {
     height: 100%;
     overflow: hidden;
 }
@@ -29,16 +28,12 @@ body {
     line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     line-height: 1.5;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 ::-moz-selection {
@@ -60,6 +55,7 @@ i {
     vertical-align: text-bottom;
 }
 
+
 /*
  * Links
  */
@@ -68,6 +64,15 @@ a {
     color: #506A85;
     text-decoration: none;
     outline: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 a:hover {
@@ -82,6 +87,7 @@ a img {
 .content ol li {
     margin-bottom: 1em;
 }
+
 
 /* Local */
 
