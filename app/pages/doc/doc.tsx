@@ -53,9 +53,9 @@ class PromptModal extends React.Component<any, {}> {
 };
 
 class SearchModal extends React.Component<any, {}> {
-  public timer;
+  public onSearch = false;
   render(): React.ReactElement<{}> {
-    const {className, show, onClose, searchDoc, searchData} = this.props;
+    const {className, show, onClose, searchDoc, searchData, status} = this.props;
     return (
       <div className={`${style.modal} ${style.seachModal} ${className} ${show ? style.modalShow : ""}`}>
         <div className={style.modalOuter}>
@@ -64,13 +64,12 @@ class SearchModal extends React.Component<any, {}> {
               <input
                 autoFocus
                 type="text"
-                onChange={(event) => {
-                  const {value}: any = event.target;
-                  clearTimeout(this.timer);
-                  this.timer = setTimeout(
-                    () => searchDoc(value),
-                    300
-                  );
+                onKeyPress={(event) => {
+                  if (event.key === "Enter") {
+                    const {value}: any = event.target;
+                    searchDoc(value);
+                    this.onSearch = true;
+                  }
                 }} />
             </div>
             <div className={style.search}>
@@ -89,7 +88,7 @@ class SearchModal extends React.Component<any, {}> {
                 );
               })
               : <div className={style.searchNotFound}>
-                  Your search has no result
+                  {!this.onSearch && status !== "COMPLETE" ? "Enter your search query" : "Your search has no result"}
                  </div>
               }
             </div>
@@ -207,6 +206,7 @@ export class Doc extends React.Component<any, {}> {
                 <SearchModal
                   show={true}
                   searchData={search.posts}
+                  status={status}
                   onClose={() => {
                     dispatch(openSearchModal());
                     dispatch(loadSearchDoc({
