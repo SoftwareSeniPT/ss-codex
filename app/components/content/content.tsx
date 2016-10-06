@@ -5,8 +5,6 @@
 interface IContentProps {
   title: string;
   content: string;
-  onSearchPage: boolean;
-  searchData: any;
   className: string;
   parent: any;
 }
@@ -20,8 +18,6 @@ import * as React from "react";
 // Styles
 const style: any = require("./content.css");
 
-// Link
-import {Link} from "react-router";
 import {decodeEntities} from "../../services/string/decodeEntities";
 
 /*
@@ -30,7 +26,7 @@ import {decodeEntities} from "../../services/string/decodeEntities";
 
 export class Content extends React.Component<IContentProps, IContentState> {
     render(): React.ReactElement<{}> {
-        const {title, content, onSearchPage, searchData, className, parent} = this.props;
+        const {title, content, className, parent} = this.props;
 
         let replacedContent;
         // Replace shotcode on content
@@ -75,25 +71,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
 
         return (
             <div className={`content ${style.content} ${className}`}>
-              {onSearchPage ?
-                <div className={style.search}>
-                {searchData.length ? searchData.map((search, key) => {
-                  const {title, excerpt, slug} = search;
-                  return (
-                    <div className={style.searchItem} key={key}>
-                      <h2 className={style.title}>
-                        <Link to={`/doc/${slug}`}>
-                          {decodeEntities(title)}
-                        </Link>
-                      </h2>
-                      <div className={style.item} dangerouslySetInnerHTML={{ __html: excerpt}} />
-                    </div>
-                  );
-                }) : <div className={style.searchNotFound}>
-                      Your search has no result
-                     </div>}
-                </div>
-              : <div className={`${style.singlePost} ${title === "Introduction" ? style.frontPage : null}`}>
+              <div className={`${style.singlePost} ${title === "Introduction" ? style.frontPage : null}`}>
                   <div className={style.hero} style={{ backgroundImage: "url(./assets/home-bg.png)"}}>
                     <h1>
                       {title === "Introduction" ? "Software Seni Handbook" : (parent !== null ? parent.name : "")}
@@ -109,7 +87,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
                     {decodeEntities(title)}
                   </h2>
                   <div className={style.item} dangerouslySetInnerHTML={{ __html: replacedContent }} />
-                </div>}
+                </div>
             </div>
         );
     }

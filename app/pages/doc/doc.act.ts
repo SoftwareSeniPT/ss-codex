@@ -16,7 +16,7 @@ function loadDoc(data) {
   };
 }
 
-function loadSearchDoc(data) {
+export function loadSearchDoc(data) {
   "use strict";
   return {
     type: "LOAD_SEARCH_DOC",
@@ -37,6 +37,13 @@ export function updateParentData(data) {
   return {
     type: "UPDATE_PARENT_DATA",
     data
+  };
+}
+
+export function openSearchModal() {
+  "use strict";
+  return {
+    type: "OPEN_SEARCH_MODAL"
   };
 }
 

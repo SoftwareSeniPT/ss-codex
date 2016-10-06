@@ -17,6 +17,7 @@
     padding-top: 60px;
 }
 
+
 /* Modal */
 
 .modal {
@@ -63,11 +64,58 @@
     background-color: white;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     width: 478px;
-    padding: 17px;
     border-radius: 5px;
     text-align: center;
     margin: 0 auto;
     z-index: 99999;
+    position: relative
+}
+
+.searchModalHead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.searchModalHead input {
+    width: 100%;
+    vertical-align: top;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    padding: 12px 10px;
+    color: #909090;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.searchModalClose {
+    position: absolute;
+    right: -14px;
+    top: -10px;
+    background: #21d2cc;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.seachModal .modalOuter {
+    background-color: #eaf3f3;
+    text-align: left;
+    padding-top: 45px;
+}
+
+.search {
+    max-height: 70vh;
+    overflow: scroll;
+    padding: 0 0 20px;
 }
 
 .modalTitle {
@@ -97,8 +145,6 @@
     line-height: normal;
 }
 
-.modalInput {}
-
 .modalInput input {
     width: 100%;
     box-sizing: border-box;
@@ -119,8 +165,6 @@
     border: 1px solid #b4dbed;
 }
 
-.modalButton {}
-
 .modalButton button {
     background-color: #8CD4F5;
     color: white;
@@ -139,6 +183,29 @@
 }
 
 .modalButton .modalEnter {}
+
+.title {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #13A99E;
+    cursor: pointer;
+}
+
+.searchItem, .searchNotFound {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.searchNotFound {
+    border: 0;
+    text-align: center
+}
+
+.item p {
+    margin: 0;
+}
 
 
 /* Mobile media query */

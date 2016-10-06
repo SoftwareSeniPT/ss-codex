@@ -10,7 +10,8 @@ const initialState: any = {
   parent: {},
   search: {
     posts: []
-  }
+  },
+  openSearchModal: false
 };
 export const docReducer: any = (state: any = initialState, action: any) => {
   switch (action.type) {
@@ -21,6 +22,10 @@ export const docReducer: any = (state: any = initialState, action: any) => {
         status: "COMPLETE",
         data: action.data
       });
+    case "OPEN_SEARCH_MODAL":
+      return immutable(state, {
+        openSearchModal: !state.openSearchModal
+      });
     case "UPDATE_SEARCH_PAGE_VISIBILITY":
       return immutable(state, {
         onSearchPage: action.status
@@ -28,7 +33,7 @@ export const docReducer: any = (state: any = initialState, action: any) => {
     case "UPDATE_PARENT_DATA":
       return immutable(state, {
         parent: action.data
-      });        
+      });
     case "SHOW_PASSWORD_PROMPT":
       return immutable(state, {
         status: "NEED_PASSWORD"

@@ -9,9 +9,11 @@ import Sidebar from "../../components/sidebar/sidebar";
 import {SearchForm} from "../../components/search-form/search-form";
 import {Content} from "../../components/content/content";
 import {Hamburger} from "../../components/hamburger/hamburger";
+import {decodeEntities} from "../../services/string/decodeEntities";
+import {hashHistory} from "react-router";
 
 // Action
-import {getDoc, searchDoc, showOffcanvas, hidePasswordPrompt} from "./doc.act";
+import {getDoc, searchDoc, showOffcanvas, hidePasswordPrompt, openSearchModal, loadSearchDoc} from "./doc.act";
 
 // Styles
 const style: any = require("./doc.css");
@@ -23,7 +25,7 @@ const style: any = require("./doc.css");
  * Import --------------------
  */
 
-export class PromptModal extends React.Component<any, {}> {
+class PromptModal extends React.Component<any, {}> {
   render(): React.ReactElement<{}> {
     const {className, show, cancelCallback, enterCallback} = this.props;
     const {password}: any = this.refs;
@@ -44,6 +46,53 @@ export class PromptModal extends React.Component<any, {}> {
               onClick={() => cancelCallback(password.value) }>Cancel</button>
             <button className={style.modalEnter} onClick={() => enterCallback(password.value) }>Submit</button>
           </div>
+        </div>
+      </div>
+    );
+  }
+};
+
+class SearchModal extends React.Component<any, {}> {
+  public timer;
+  render(): React.ReactElement<{}> {
+    const {className, show, onClose, searchDoc, searchData} = this.props;
+    return (
+      <div className={`${style.modal} ${style.seachModal} ${className} ${show ? style.modalShow : ""}`}>
+        <div className={style.modalOuter}>
+            <div className={style.searchModalHead}>
+              <span className={style.searchModalClose} onClick={onClose}>x</span>
+              <input
+                autoFocus
+                type="text"
+                onChange={(event) => {
+                  const {value}: any = event.target;
+                  clearTimeout(this.timer);
+                  this.timer = setTimeout(
+                    () => searchDoc(value),
+                    300
+                  );
+                }} />
+            </div>
+            <div className={style.search}>
+              {searchData.length ? searchData.map((search, key) => {
+                const {title, excerpt, slug} = search;
+                return (
+                  <div className={style.searchItem} key={key}>
+                    <h2 className={style.title} onClick={() => {
+                      hashHistory.push(`/doc/${slug}`);
+                      onClose();
+                    }}>
+                      {decodeEntities(title)}
+                    </h2>
+                    <div className={style.item} dangerouslySetInnerHTML={{ __html: excerpt.substring(0, 200)}} />
+                  </div>
+                );
+              })
+              : <div className={style.searchNotFound}>
+                  Your search has no result
+                 </div>
+              }
+            </div>
         </div>
       </div>
     );
@@ -123,7 +172,7 @@ export class Doc extends React.Component<any, {}> {
 
     render(): React.ReactElement<{}> {
         const {docs, dispatch, params, sidebarData} = this.props;
-        const {data, status, search, onSearchPage, offcanvasActive} = docs;
+        const {data, status, search, offcanvasActive} = docs;
         let parent;
         if (data.categories !== undefined && data.categories !== null) {
           const cat = data.categories[Object.keys(data.categories)[0]];
@@ -142,19 +191,33 @@ export class Doc extends React.Component<any, {}> {
                 className={`${style.sidebar} ${offcanvasActive ? style.sideBarActive : ""}`} />
               <SearchForm
                 status={status}
-                className={`${style.searchForm} ${offcanvasActive ? style.searchFormPushRight : ""}`}
-                searchDoc={(query) => dispatch(searchDoc(query)) } />
+                onClick={() => dispatch(openSearchModal())}
+                className={`${style.searchForm} ${offcanvasActive ? style.searchFormPushRight : ""}`} />
               <Content
                 className={`${style.content} ${offcanvasActive ? style.contentPushRight : ""}`}
                 title={data.title}
-                onSearchPage={onSearchPage}
-                searchData={search.posts}
                 parent={data.categories !== undefined && data.categories !== null ? this.findCatParent(data.categories[Object.keys(data.categories)[0]], sidebarData.categories) : null}
                 content={data.content} />
               <PromptModal
                 show={status === "NEED_PASSWORD" ? true : false}
                 enterCallback={(password) => this.processPassword(password) }
                 cancelCallback={() => dispatch(hidePasswordPrompt())} />
+
+              {docs.openSearchModal ?
+                <SearchModal
+                  show={true}
+                  searchData={search.posts}
+                  onClose={() => {
+                    dispatch(openSearchModal());
+                    dispatch(loadSearchDoc({
+                      posts: []
+                    }));
+                  }}
+                  enterCallback={(password) => this.processPassword(password) }
+                  searchDoc={(query) => dispatch(searchDoc(query)) }
+                  cancelCallback={() => dispatch(hidePasswordPrompt())} />
+              : null}
+
             </div>
         );
     }
