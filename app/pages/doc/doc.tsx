@@ -88,7 +88,7 @@ class SearchModal extends React.Component<any, {}> {
                 );
               })
               : <div className={style.searchNotFound}>
-                  {!this.onSearch && status !== "COMPLETE" ? "Enter your search query" : "Your search has no result"}
+                  {this.onSearch && status === "COMPLETE" ? "Your search has no result" : "Enter your search query" }
                  </div>
               }
             </div>
