@@ -63,7 +63,8 @@
 .modalOuter {
     background-color: white;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    width: 478px;
+    max-width: 478px;
+    width: 90%;
     border-radius: 5px;
     text-align: center;
     margin: 0 auto;
