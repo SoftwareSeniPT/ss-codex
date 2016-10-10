@@ -17,6 +17,11 @@
     padding-top: 60px;
 }
 
+.offcanvasActive {
+  width: 100%;
+  overflow: hidden;
+}
+
 
 /* Modal */
 
