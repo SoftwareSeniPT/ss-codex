@@ -14,7 +14,6 @@ html, body {
 }
 
 :global(#main) {
-    overflow: auto;
     height: 100%;
 }
 
