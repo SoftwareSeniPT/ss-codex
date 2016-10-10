@@ -25,6 +25,11 @@ import {decodeEntities} from "../../services/string/decodeEntities";
  */
 
 export class Content extends React.Component<IContentProps, IContentState> {
+    componentDidUpdate(prev) {
+      if (prev.title !== this.props.title) {
+        window.scrollTo(0, 0);
+      }
+    }
     render(): React.ReactElement<{}> {
         const {title, content, className, parent} = this.props;
 
