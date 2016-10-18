@@ -109,6 +109,14 @@
 .frontPage .hero h1 {
     font-size: 80px;
 }
+.lastUpdate {
+  padding: 0 40px;
+  font-style: italic;
+  color: #6c90a3;
+}
+.bold {
+  font-weight: bold;
+}
 :global(.list-with-checkbox) {
     list-style: none;
     list-style-position: inside;

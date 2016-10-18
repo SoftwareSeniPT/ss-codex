@@ -5,6 +5,8 @@
 interface IContentProps {
   title: string;
   content: string;
+  modified: string;
+  author: any;
   className: string;
   parent: any;
 }
@@ -30,9 +32,21 @@ export class Content extends React.Component<IContentProps, IContentState> {
         window.scrollTo(0, 0);
       }
     }
+    convertDate(fullDate) {
+      const date = new Date(fullDate);
+      const month = date.getMonth();
+      const day = date.getDate();
+      const year = date.getFullYear();
+      const monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
+      return `${day} ${monthNames[month]} ${year}`;
+    }
     render(): React.ReactElement<{}> {
-        const {title, content, className, parent} = this.props;
-
+        const {title, content, className, parent, modified, author} = this.props;
         let replacedContent;
         // Replace shotcode on content
         if (typeof content === "string") {
@@ -91,6 +105,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
                   <h2 className={style.title}>
                     {decodeEntities(title)}
                   </h2>
+                  <div className={style.lastUpdate}>Last update <span className={style.bold}>{modified !== undefined ? this.convertDate(modified) : null}</span> by <span className={style.bold}>{author !== undefined ? author.name : null}</span></div>
                   <div className={style.item} dangerouslySetInnerHTML={{ __html: replacedContent }} />
                 </div>
             </div>

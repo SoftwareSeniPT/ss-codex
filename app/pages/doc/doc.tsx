@@ -178,7 +178,6 @@ export class Doc extends React.Component<any, {}> {
           const catLib = sidebarData.categories;
           parent = this.findCatParent(cat, catLib);
         }
-
         return (
           <div className={`doc ${style.doc} ${offcanvasActive ? style.offcanvasActive : ""}`}>
             <Hamburger
@@ -194,6 +193,8 @@ export class Doc extends React.Component<any, {}> {
                 className={`${style.searchForm} ${offcanvasActive ? style.searchFormPushRight : ""}`} />
               <Content
                 className={`${style.content} ${offcanvasActive ? style.contentPushRight : ""}`}
+                modified={data.modified}
+                author={data.author}
                 title={data.title}
                 parent={data.categories !== undefined && data.categories !== null ? this.findCatParent(data.categories[Object.keys(data.categories)[0]], sidebarData.categories) : null}
                 content={data.content} />
