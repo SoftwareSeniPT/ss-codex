@@ -98,7 +98,6 @@
     border-right: 1px solid #D0DEDD;
 }
 .content table tr td:last-child {
-    border: 0;
     line-height: 1.2;
 }
 .frontPage .hero {
